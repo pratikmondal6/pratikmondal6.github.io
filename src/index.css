@@ -1,0 +1,13 @@
+@import "tailwindcss";
+/* Print polish (screen unaffected) */
+@media print {
+    @page { margin: 12mm; }
+    html, body { background: #fff !important; }
+    a { text-decoration: none; color: #000; }
+    /* Slight global scale for print so more fits per page */
+    :root { font-size: 15px; } /* default ~16px */
+
+    /* Keep small blocks together; we’ll apply this only to cards & each job */
+    .no-break { break-inside: avoid; page-break-inside: avoid; }
+    .avoid-break-after { break-after: avoid; page-break-after: avoid; }
+}
