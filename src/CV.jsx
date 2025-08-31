@@ -33,7 +33,7 @@ export default function CV() {
                         <div className="md:flex-1 min-w-0">
                             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">Pratik Mondal</h1>
                             <p className="mt-1 text-[15px] text-gray-600 leading-snug">
-                                Java & DevOps Engineer · 4+ years (2+ in Germany)
+                                Java & DevOps Engineer · 5+ years (2+ in Germany)
                                 <br />
                                 Spring Boot, React, DevOps (CI/CD, Docker, ArgoCD)
                             </p>
@@ -187,9 +187,9 @@ export default function CV() {
 function TechSkillsList() {
     return (
         <ul className="text-sm leading-6 sm:grid sm:grid-cols-2 gap-x-6">
-            <li><strong>Programming:</strong> Java, Python, JavaScript, TypeScript, C++, Groovy</li>
+            <li><strong>Programming Languages:</strong> Java, Python, JavaScript, TypeScript, C++, Groovy</li>
             <li><strong>Frameworks:</strong> Spring Boot, React, Angular, Grails, JUnit</li>
-            <li><strong>Backend & APIs:</strong> Microservices, REST, API Gateway, Security, Hibernate, JPA, Kafka, JDBC</li>
+            <li><strong>Backend & APIs:</strong> Microservices, REST, API Gateway, Security, Batch, Hibernate, JBoss, JPA, Kafka, JDBC, WildFly</li>
             <li><strong>DevOps:</strong> GitLab CI/CD, Jenkins, Docker, Harbor, ArgoCD, Rancher, SonarQube, AWS S3, MinIO, RabbitMQ, Maven</li>
             <li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB, Firebase</li>
             <li><strong>Frontend:</strong> HTML5, CSS3, Bootstrap 5</li>
