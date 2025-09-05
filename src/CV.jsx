@@ -27,28 +27,48 @@ export default function CV() {
             <div className="mx-auto max-w-5xl print:max-w-[900px] px-5 py-8 print:py-0">
                 {/* Header */}
                 <header className="bg-white rounded-2xl shadow-sm ring-1 ring-gray-900/5 p-6 md:p-8 print:shadow-none print:ring-0">
-                    {/* was: md:flex md:items-center md:justify-between md:gap-8 */}
-                    <div className="md:flex md:items-start md:gap-8">
-                        {/* LEFT: name + tagline */}
-                        <div className="md:flex-1 min-w-0">
-                            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">Pratik Mondal</h1>
-                            <p className="mt-1 text-[15px] text-gray-600 leading-snug">
-                                Java & DevOps Engineer · 5+ years (2+ in Germany)
-                                <br />
-                                Spring Boot, React, DevOps (CI/CD, Docker, ArgoCD)
+                    <div className="flex justify-between items-center">
+                        {/* Left: Name and Tagline */}
+                        <div className="flex-1">
+                            <h1 className="text-4xl font-extrabold text-gray-900">Pratik Mondal</h1>
+                            <p className="mt-2 text-lg text-gray-600 leading-relaxed">
+                                Java & DevOps Engineer
+                            </p>
+                            <p className="mt-1 text-lg text-gray-600 leading-relaxed">
+                                <strong>4+ years</strong> | <strong>2+ years in Germany</strong>
+                            </p>
+                            <p className="mt-1 text-sm text-gray-600 leading-snug">
+                                Spring Boot | React | DevOps (CI/CD, Docker, ArgoCD)
                             </p>
                         </div>
 
-                        {/* RIGHT: contacts — gets exactly half width on md+ */}
-                        <ul className="md:flex-1 min-w-0 mt-4 md:mt-0 grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
-                            <li className="flex items-center gap-2"><Phone className="h-4 w-4" /><a href="tel:+4915754255758" className="hover:underline">+49 15754255758</a></li>
-                            <li className="flex items-center gap-2"><Mail className="h-4 w-4" /><a href="mailto:pratikmondal6@hotmail.com" className="hover:underline">pratikmondal6@hotmail.com</a></li>
-                            <li className="flex items-center gap-2"><MapPin className="h-4 w-4" /><span>Kaiserslautern, Germany</span></li>
-                            <li className="flex items-center gap-2"><Github className="h-4 w-4" /><a href="https://github.com/pratikmondal6" target="_blank" rel="noreferrer" className="hover:underline">github.com/pratikmondal6</a></li>
-                            <li className="flex items-center gap-2"><Linkedin className="h-4 w-4" /><a href="https://linkedin.com/in/pratikmondal6" target="_blank" rel="noreferrer" className="hover:underline">linkedin.com/in/pratikmondal6</a></li>
+                        {/* Right: Contact Info */}
+                        <ul className="flex flex-col gap-2 text-sm text-gray-600 ml-6">
+                            <li className="flex items-center gap-2">
+                                <Phone className="h-5 w-5" />
+                                <span>+49 15754255758</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                                <Mail className="h-5 w-5" />
+                                <span>pratikmondal6@hotmail.com</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                                <MapPin className="h-5 w-5" />
+                                <span>Kaiserslautern, Germany</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                                <Github className="h-5 w-5" />
+                                <a href="https://github.com/pratikmondal6" target="_blank" rel="noreferrer">github.com/pratikmondal6</a>
+                            </li>
+                            <li className="flex items-center gap-2">
+                                <Linkedin className="h-5 w-5" />
+                                <a href="https://linkedin.com/in/pratikmondal6" target="_blank" rel="noreferrer">linkedin.com/in/pratikmondal6</a>
+                            </li>
                         </ul>
                     </div>
                 </header>
+
+
 
                 {/* Body: two columns on screen; single column on print */}
                 <div className="mt-6 grid lg:grid-cols-[1fr_320px] gap-6 print:grid-cols-1 print:gap-4">
@@ -83,7 +103,7 @@ export default function CV() {
                                     "Deployed backup containers via ArgoCD & Rancher (Harbor registry) for cluster reliability.",
                                     "Implemented TTL indexes for GridFS to lower storage costs and improve query performance.",
                                     "Built compare/sync for MongoDB instances (GridFS, Java, GitLab) to increase data integrity.",
-                                    "Led Amprion Data Model migration to GitLab CI/CD; improved collaboration and release cadence.",
+                                    "Led Amprion Data Model migration to GitLab CI/CD; improved collaboration and release cadence."
                                 ]}
                             />
 
@@ -95,7 +115,7 @@ export default function CV() {
                                 bullets={[
                                     "Designed React/Redux + TypeScript interfaces, speeding decisions by ~15%.",
                                     "Built carbon-emission module (Spring Boot, JDBC, REST), +10% perf gains.",
-                                    "Improved quality with JUnit & CI, cutting bugs by ~10%.",
+                                    "Improved quality with JUnit & CI, cutting bugs by ~10%."
                                 ]}
                             />
 
@@ -108,7 +128,7 @@ export default function CV() {
                                     "Delivered 5 production systems (ERP, microservices, API Gateway, Kafka) for 100K+ users.",
                                     "Hardened auth with Spring Security + JPA/JDBC; incidents down ~25%.",
                                     "Optimized releases using Maven/Gradle & Docker; -10% release time.",
-                                    "Mentored 5 interns; instituted ownership & code review practices (↑ delivery quality ~20%).",
+                                    "Mentored 5 interns; instituted ownership & code review practices (↑ delivery quality ~20%)."
                                 ]}
                             />
                         </Section>
@@ -132,6 +152,11 @@ export default function CV() {
                         {/* Projects */}
                         <Section id="portfolio" title="Selected Projects">
                             <Project
+                                title="Award-Winning Smart Farming Compliance Tool"
+                                desc="2nd place at the Smart Farming Hackathon 2025. Built a compliance solution that cuts office work by 50% with one-click checks. The system integrates GeoBox and FMiS, providing farmers with field-specific guidance on fertilization, crop protection, and environmental regulations using public geo-data."
+                                link={{ href: "https://github.com/pratikmondal6/farm-compliance-tool", label: "GitHub" }}
+                            />
+                            <Project
                                 title="AI-Powered Knowledge Graph for Research Papers"
                                 desc="LLM + Neo4j system to analyze 1K+ papers, extract entities, and visualize knowledge graphs."
                                 link={{ href: "https://github.com/pratikmondal6/AI-Powered-Knowledge-Graph-for-Research-Paper-Analysis", label: "GitHub" }}
@@ -147,6 +172,7 @@ export default function CV() {
                                 link={{ href: "https://shongjog.brac.net", label: "Live" }}
                             />
                         </Section>
+
                     </div>
 
                     {/* Sidebar (unchanged on web). Hide Tech Skills here ONLY on print. */}
@@ -157,13 +183,15 @@ export default function CV() {
                             </Card>
                         </div>
 
-                        <Card title="Certifications" icon={<Award className="h-4 w-4" /> }>
+                        <Card title="Achievements" icon={<Award className="h-4 w-4" />}>
                             <ul className="text-sm space-y-1">
-                                <li><strong>Best Team  — Smart Farming Hackathon 2024 (Fraunhofer IESE) </strong> </li>
-                                <li>Supervised ML: Regression & Classification</li>
+                                <li><strong>2nd Position</strong>  — Smart Farming Hackathon 2025 (Innovationsagentur Rheinland-Pfalz) </li>
+                                <li><strong>Best Team </strong>  — Smart Farming Hackathon 2024 (Fraunhofer IESE)</li>
                                 <li>HackerRank Java (Intermediate) — Problem Solver</li>
+                                <li>Supervised ML: Regression & Classification</li>
                             </ul>
                         </Card>
+
 
                         <Card title="Soft Skills">
                             <p className="text-sm">Analytical Problem Solving · Project Management · Ownership · Collaboration · Conflict Resolution</p>
