@@ -26,11 +26,11 @@ export default function CV() {
             {/* Page */}
             <div className="mx-auto max-w-5xl print:max-w-[900px] px-5 py-8 print:py-0">
                 {/* Header */}
-                <header className="bg-white rounded-2xl shadow-sm ring-1 ring-gray-900/5 p-6 md:p-8 print:shadow-none print:ring-0">
+                <header className="bg-white rounded-2xl shadow-sm ring-1 ring-gray-900/5 p-2 md:p-4 print:shadow-none print:ring-0">
                     <div className="flex justify-between items-center">
                         {/* Left: Name and Tagline */}
                         <div className="flex-1">
-                            <h1 className="text-4xl font-extrabold text-gray-900">Pratik Mondal</h1>
+                            <h1 className="text-3xl font-extrabold text-gray-900">Pratik Mondal</h1> {/* Reduced from text-4xl to text-3xl */}
                             <p className="mt-2 text-lg text-gray-600 leading-relaxed">
                                 Java & DevOps Engineer
                             </p>
@@ -68,8 +68,6 @@ export default function CV() {
                     </div>
                 </header>
 
-
-
                 {/* Body: two columns on screen; single column on print */}
                 <div className="mt-6 grid lg:grid-cols-[1fr_320px] gap-6 print:grid-cols-1 print:gap-4">
                     {/* Main column */}
@@ -98,12 +96,11 @@ export default function CV() {
                                 location="Kassel, Germany"
                                 date="Jul 2024 – Present"
                                 bullets={[
-                                    "Migrated Jenkins pipelines to GitLab CI/CD, reducing build/release time by ~10%.",
-                                    "Automated MongoDB 7 backups to MinIO/S3 with two-tier DR; runtime reduced by ~15%.",
-                                    "Deployed backup containers via ArgoCD & Rancher (Harbor registry) for cluster reliability.",
-                                    "Implemented TTL indexes for GridFS to lower storage costs and improve query performance.",
-                                    "Built compare/sync for MongoDB instances (GridFS, Java, GitLab) to increase data integrity.",
-                                    "Led Amprion Data Model migration to GitLab CI/CD; improved collaboration and release cadence."
+                                    "Migrated Jenkins pipelines to GitLab CI/CD, reducing build/release time by 10%.",
+                                    "Automated MongoDB 7 backups to MinIO/S3 with two-tier disaster recovery, reducing runtime by 15%.",
+                                    "Deployed backup containers with ArgoCD & Rancher using Harbor registry, ensuring cluster-wide reliability.",
+                                    "Automated a Spring Boot service to monitor and log CI/CD pipeline events, cutting failure detection time by 25%.",
+                                    "Built a REST API with Spring Boot + JPA to expose metadata from MongoDB backups, reducing query time by 12%."
                                 ]}
                             />
 
@@ -113,9 +110,11 @@ export default function CV() {
                                 location="Kaiserslautern, Germany"
                                 date="Oct 2023 – Apr 2024"
                                 bullets={[
-                                    "Designed React/Redux + TypeScript interfaces, speeding decisions by ~15%.",
-                                    "Built carbon-emission module (Spring Boot, JDBC, REST), +10% perf gains.",
-                                    "Improved quality with JUnit & CI, cutting bugs by ~10%."
+                                    "Designed React/Redux + TypeScript interfaces, improving decision workflows by 15%.",
+                                    "Implemented carbon-emission calculation module (Spring Boot, JDBC, REST), improving performance by 10%.",
+                                    "Reduced bugs by 10% with unit testing (JUnit) and continuous integration.",
+                                    "Contributed to Agile sprints, sprint planning, and daily stand-ups, speeding up delivery cycles.",
+                                    "Integrated external APIs into Spring Boot services, boosting interoperability by 20%."
                                 ]}
                             />
 
@@ -125,10 +124,10 @@ export default function CV() {
                                 location="Dhaka, Bangladesh"
                                 date="Jul 2019 – Sep 2022"
                                 bullets={[
-                                    "Delivered 5 production systems (ERP, microservices, API Gateway, Kafka) for 100K+ users.",
-                                    "Hardened auth with Spring Security + JPA/JDBC; incidents down ~25%.",
-                                    "Optimized releases using Maven/Gradle & Docker; -10% release time.",
-                                    "Mentored 5 interns; instituted ownership & code review practices (↑ delivery quality ~20%)."
+                                    "Delivered 5 enterprise-grade production systems (ERP, microservices, API Gateway, Kafka) serving 100K+ users.",
+                                    "Increased security & reliability with Spring Security + JPA/JDBC; 25% fewer incidents.",
+                                    "Optimized deployments using Maven/Gradle and Docker, cutting release time by 10%.",
+                                    "Mentored 5 interns, establishing task ownership practices and structured code reviews, improving delivery quality by 20%."
                                 ]}
                             />
                         </Section>
@@ -158,17 +157,17 @@ export default function CV() {
                             />
                             <Project
                                 title="AI-Powered Knowledge Graph for Research Papers"
-                                desc="LLM + Neo4j system to analyze 1K+ papers, extract entities, and visualize knowledge graphs."
+                                desc="LLM + Neo4j system to analyze around 1000 research papers, extracting entities and visualizing knowledge graphs."
                                 link={{ href: "https://github.com/pratikmondal6/AI-Powered-Knowledge-Graph-for-Research-Paper-Analysis", label: "GitHub" }}
                             />
                             <Project
                                 title="Farmbot — Digital Agriculture"
-                                desc="AI-powered IoT with Node.js + React for seeding, irrigation, and soil monitoring."
+                                desc="AI-powered IoT with Node.js + React for automated seeding, irrigation, and soil monitoring."
                                 link={{ href: "https://github.com/pratikmondal6/Farmbot-Digital-Agriculture", label: "GitHub" }}
                             />
                             <Project
                                 title="Shongjog — Emergency Service Mapping"
-                                desc="Java/Spring + Angular platform for emergency services; boosted MAU by ~40%."
+                                desc="Java/Spring + Angular platform for emergency services, boosting MAU (Monthly Active Users) by 40%."
                                 link={{ href: "https://shongjog.brac.net", label: "Live" }}
                             />
                         </Section>
@@ -191,7 +190,6 @@ export default function CV() {
                                 <li>Supervised ML: Regression & Classification</li>
                             </ul>
                         </Card>
-
 
                         <Card title="Soft Skills">
                             <p className="text-sm">Analytical Problem Solving · Project Management · Ownership · Collaboration · Conflict Resolution</p>
