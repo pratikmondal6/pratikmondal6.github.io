@@ -10,108 +10,110 @@ const hasAchievements = siteConfig.achievements && siteConfig.achievements.lengt
 
 <header
   id="header"
-  class="fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-300"
+  class="fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-500"
 >
   <div class="relative">
-    <!-- Background Pattern -->
-    <div class="absolute inset-0 bg-gradient-to-r from-white via-gray-50 to-white"></div>
-    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+    <!-- Premium glassmorphic background with visible gradient -->
+    <div class="absolute inset-0 bg-white/85 backdrop-blur-xl border-b border-white/30"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-50/50 via-white/90 to-purple-50/50"></div>
+    
+    <!-- More visible company color accents -->
+    <div class="absolute inset-0 opacity-[0.08]">
+      <div class="absolute top-2 left-1/4 w-24 h-24 rounded-full blur-2xl" style="background-color: #619E7E"></div>
+      <div class="absolute top-2 right-1/4 w-20 h-20 rounded-full blur-2xl" style="background-color: #0A2D59"></div>
+      <div class="absolute top-1 left-1/2 transform -translate-x-1/2 w-28 h-28 rounded-full blur-2xl" style="background-color: #56863F"></div>
+    </div>
+    
+    <!-- Top accent border -->
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-blue-400/60 to-transparent"></div>
     
     <nav class="relative max-w-6xl mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
         
-        <!-- Left: Brand Mark -->
+        <!-- Enhanced Brand Mark with visible effects -->
         <div class="flex items-center space-x-4">
           <div class="relative group cursor-pointer brand-logo">
-            <div class="absolute -inset-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
+            <!-- More visible glow effect -->
+            <div class="absolute -inset-4 opacity-30 group-hover:opacity-60 transition-all duration-500 rounded-2xl blur-xl"
+                 style="background: linear-gradient(135deg, #1d4ed8, #3b82f6, #6366f1)">
+            </div>
             <div 
-              class="relative px-4 py-2 bg-white rounded-xl border-2 shadow-lg hover:shadow-xl transition-all duration-200"
-              style={`border-color: ${siteConfig.accentColor}`}
+              class="relative px-5 py-3 bg-white/90 backdrop-blur-sm rounded-xl border-2 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+              style="border-color: #1d4ed8; box-shadow: 0 8px 25px rgba(29, 78, 216, 0.15), 0 0 0 1px rgba(29, 78, 216, 0.1)"
             >
-              <span class="font-bold text-lg tracking-tight" style={`color: ${siteConfig.accentColor}`}>
+              <span class="font-bold text-lg tracking-tight text-blue-600">
                 {siteConfig.name.split(' ').map(word => word[0]).join('')}
               </span>
             </div>
           </div>
           <div class="hidden xl:block cursor-pointer brand-text">
-            <div class="border-l-2 border-gray-300 pl-4 hover:opacity-80 transition-opacity duration-200">
-              <p class="text-sm font-medium text-gray-900">{siteConfig.name.split(' ')[0]}</p>
-              <p class="text-xs text-gray-500 -mt-0.5">Portfolio</p>
+            <div class="border-l-2 pl-4 hover:opacity-80 transition-all duration-300"
+                 style="border-color: #1d4ed8">
+              <p class="text-sm font-semibold text-gray-900">{siteConfig.name.split(' ')[0]}</p>
+              <p class="text-xs text-blue-600 -mt-0.5 font-medium">Portfolio</p>
             </div>
           </div>
         </div>
 
-        <!-- Center: Navigation Tabs -->
+        <!-- Premium Navigation with visible glassmorphism -->
         <div class="hidden lg:flex">
-          <div class="flex items-center bg-white rounded-xl border border-gray-200 shadow-sm p-1">
+          <div class="flex items-center bg-white/90 backdrop-blur-md rounded-2xl border border-blue-200/60 shadow-xl p-2 gap-2"
+               style="box-shadow: 0 8px 32px rgba(29, 78, 216, 0.15), 0 0 0 1px rgba(255,255,255,0.9)">
             <a
               href="#about"
-              class="nav-item px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 rounded-lg transition-all duration-200 hover:bg-gray-50"
+              class="nav-item px-4 py-2.5 text-sm font-bold text-gray-900 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200/60 hover:text-blue-600 hover:bg-blue-50/90 hover:border-blue-300/80 transition-all duration-300 hover:shadow-xl hover:scale-105 relative overflow-hidden"
+              style="box-shadow: 0 4px 12px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08)"
             >
-              About
+              <span class="relative z-10">About</span>
             </a>
-            {
-              hasExperience && (
-                <a
-                  href="#experience"
-                  class="nav-item px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 rounded-lg transition-all duration-200 hover:bg-gray-50"
-                >
-                  Work
-                </a>
-              )
-            }
-            {
-              hasAchievements && (
-                <a
-                  href="#achievements"
-                  class="nav-item px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 rounded-lg transition-all duration-200 hover:bg-gray-50"
-                >
-                  Awards
-                </a>
-              )
-            }
-            {
-              hasSkillsAndExpertise && (
-                <a
-                  href="#skillsandexpertise"
-                  class="nav-item px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 rounded-lg transition-all duration-200 hover:bg-gray-50"
-                >
-                  Skills
-                </a>
-              )
-            }
-            {
-              hasProjects && (
-                <a
-                  href="#projects"
-                  class="nav-item px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 rounded-lg transition-all duration-200 hover:bg-gray-50"
-                >
-                  Projects
-                </a>
-              )
-            }
-            {
-              hasEducation && (
-                <a
-                  href="#education"
-                  class="nav-item px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 rounded-lg transition-all duration-200 hover:bg-gray-50"
-                >
-                  Education
-                </a>
-              )
-            }
+            <a
+              href="#experience"
+              class="nav-item px-4 py-2.5 text-sm font-bold text-gray-900 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200/60 hover:text-blue-600 hover:bg-blue-50/90 hover:border-blue-300/80 transition-all duration-300 hover:shadow-xl hover:scale-105 relative overflow-hidden"
+              style="box-shadow: 0 4px 12px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08)"
+            >
+              <span class="relative z-10">Experience</span>
+            </a>
+            <a
+              href="#achievements"
+              class="nav-item px-4 py-2.5 text-sm font-bold text-gray-900 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200/60 hover:text-blue-600 hover:bg-blue-50/90 hover:border-blue-300/80 transition-all duration-300 hover:shadow-xl hover:scale-105 relative overflow-hidden"
+              style="box-shadow: 0 4px 12px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08)"
+            >
+              <span class="relative z-10">Awards</span>
+            </a>
+            <a
+              href="#skillsandexpertise"
+              class="nav-item px-4 py-2.5 text-sm font-bold text-gray-900 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200/60 hover:text-blue-600 hover:bg-blue-50/90 hover:border-blue-300/80 transition-all duration-300 hover:shadow-xl hover:scale-105 relative overflow-hidden"
+              style="box-shadow: 0 4px 12px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08)"
+            >
+              <span class="relative z-10">Skills</span>
+            </a>
+            <a
+              href="#projects"
+              class="nav-item px-4 py-2.5 text-sm font-bold text-gray-900 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200/60 hover:text-blue-600 hover:bg-blue-50/90 hover:border-blue-300/80 transition-all duration-300 hover:shadow-xl hover:scale-105 relative overflow-hidden"
+              style="box-shadow: 0 4px 12px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08)"
+            >
+              <span class="relative z-10">Projects</span>
+            </a>
+            <a
+              href="#education"
+              class="nav-item px-4 py-2.5 text-sm font-bold text-gray-900 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200/60 hover:text-blue-600 hover:bg-blue-50/90 hover:border-blue-300/80 transition-all duration-300 hover:shadow-xl hover:scale-105 relative overflow-hidden"
+              style="box-shadow: 0 4px 12px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08)"
+            >
+              <span class="relative z-10">Education</span>
+            </a>
           </div>
         </div>
 
-        <!-- Right: Action Buttons -->
+        <!-- Enhanced Action Buttons -->
         <div class="flex items-center space-x-3">
           <a
             href={siteConfig.social.github}
             target="_blank"
             rel="noopener noreferrer"
-            class="hidden lg:flex items-center justify-center w-10 h-10 rounded-xl bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
+            class="hidden lg:flex items-center justify-center w-11 h-11 rounded-xl bg-white/60 backdrop-blur-sm border border-white/40 hover:bg-white/80 hover:shadow-lg hover:scale-110 transition-all duration-300"
+            style="box-shadow: 0 4px 6px rgba(0,0,0,0.05)"
           >
-            <svg class="w-5 h-5 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-gray-700 hover:text-gray-900 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
             </svg>
           </a>
@@ -119,28 +121,30 @@ const hasAchievements = siteConfig.achievements && siteConfig.achievements.lengt
             href={siteConfig.social.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            class="hidden lg:flex items-center justify-center w-10 h-10 rounded-xl bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
+            class="hidden lg:flex items-center justify-center w-11 h-11 rounded-xl bg-white/60 backdrop-blur-sm border border-white/40 hover:bg-blue-50/80 hover:shadow-lg hover:scale-110 transition-all duration-300 group"
+            style="box-shadow: 0 4px 6px rgba(0,0,0,0.05)"
           >
-            <svg class="w-5 h-5 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-gray-700 group-hover:text-blue-600 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
           </a>
           <a
             href={`mailto:${siteConfig.social.email}`}
-            class="flex items-center space-x-2 px-5 py-2.5 text-white text-sm font-medium rounded-xl transition-all duration-200 hover:shadow-lg hover:scale-105"
-            style={`background-color: ${siteConfig.accentColor}`}
+            class="flex items-center space-x-2 px-6 py-3 text-white text-sm font-semibold rounded-xl transition-all duration-300 hover:shadow-xl hover:scale-110 hover:-translate-y-1 relative overflow-hidden group"
+            style="background: linear-gradient(135deg, #1d4ed8, #3b82f6); box-shadow: 0 6px 20px rgba(29, 78, 216, 0.4)"
           >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <svg class="relative z-10 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
-            <span class="hidden sm:inline">Connect Me</span>
+            <span class="relative z-10 hidden sm:inline">Connect</span>
           </a>
         </div>
       </div>
     </nav>
     
-    <!-- Bottom Border -->
-    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+    <!-- Enhanced bottom border with blue accent -->
+    <div class="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-blue-400/50 to-transparent"></div>
   </div>
 </header>
 
@@ -169,18 +173,21 @@ const hasAchievements = siteConfig.achievements && siteConfig.achievements.lengt
   window.addEventListener("scroll", () => {
     const header = document.getElementById("header");
     if (window.scrollY > 50) {
-      header?.classList.add("backdrop-blur-md", "shadow-lg");
-      header?.style.setProperty('background', 'rgba(255, 255, 255, 0.9)');
+      header?.classList.add("backdrop-blur-xl", "shadow-xl");
+      header?.style.setProperty('background', 'rgba(255, 255, 255, 0.85)');
+      // Enhanced shadow with accent color
+      const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent-color') || '#1d4ed8';
+      header?.style.setProperty('box-shadow', `0 10px 40px -10px ${accentColor}15, 0 0 0 1px rgba(255,255,255,0.9)`);
     } else {
-      header?.classList.remove("backdrop-blur-md", "shadow-lg");
+      header?.classList.remove("backdrop-blur-xl", "shadow-xl");
       header?.style.removeProperty('background');
+      header?.style.removeProperty('box-shadow');
     }
   });
 
-  // Active navigation highlighting with accent color
+  // Enhanced active navigation highlighting
   const sections = document.querySelectorAll('section[id]') as NodeListOf<HTMLElement>;
   const navItems = document.querySelectorAll('.nav-item') as NodeListOf<HTMLAnchorElement>;
-  const accentColor = document.documentElement.style.getPropertyValue('--accent-color') || '#1d4ed8';
 
   window.addEventListener('scroll', () => {
     let current = '';
@@ -193,17 +200,21 @@ const hasAchievements = siteConfig.achievements && siteConfig.achievements.lengt
 
     navItems.forEach(link => {
       // Reset all nav items to default state
-      link.style.backgroundColor = '';
+      link.style.background = '';
       link.style.color = '';
       link.style.transform = '';
       link.style.boxShadow = '';
+      link.style.borderColor = '';
       
       if (link.getAttribute('href') === `#${current}`) {
-        // Apply accent color background and white text for active section
-        link.style.backgroundColor = '#1d4ed8';
-        link.style.color = 'white';
-        link.style.transform = 'scale(1.05)';
-        link.style.boxShadow = '0 4px 12px rgba(29, 78, 216, 0.25)';
+        // Apply dynamic accent color with glassmorphic active state
+        const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent-color') || '#1d4ed8';
+        link.style.background = `linear-gradient(135deg, ${accentColor}15, ${accentColor}25)`;
+        link.style.color = accentColor;
+        link.style.fontWeight = '600';
+        link.style.transform = 'scale(1.05) translateY(-1px)';
+        link.style.boxShadow = `0 6px 20px ${accentColor}30, 0 0 0 1px ${accentColor}40`;
+        link.style.borderRadius = '12px';
       }
     });
   });
