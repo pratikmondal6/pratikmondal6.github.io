@@ -1,27 +1,70 @@
 ---
 import { siteConfig } from "../config";
+
+// Extract key highlights from the about text
+const highlights = [
+  { icon: "🏆", text: "2 Hackathon Victories", subtext: "Smart Farming Competitions" },
+  { icon: "⚡", text: "4+ Years Experience", subtext: "Java & DevOps Engineering" }
+];
 ---
 
-<section id="about" class="p-8 sm:p-12 md:p-16 lg:p-24">
-  <div>
+<section id="about" class="p-8 sm:p-12 md:p-16 lg:p-24 relative overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-20 left-10 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 right-10 w-24 h-24 bg-purple-500 rounded-full blur-3xl"></div>
+  </div>
+  
+  <div class="relative">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
       <div class="lg:col-span-4">
-        <h2
-          class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900"
-        >
+        <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
           About Me
         </h2>
         <div
           class="w-[75px] h-[5px] mt-2 rounded-full"
           style={`background-color: ${siteConfig.accentColor}`}
-        >
+        />
+        
+        <!-- Professional highlights cards -->
+        <div class="mt-8 space-y-4">
+          {highlights.map((highlight) => (
+            <div class="flex items-center gap-4 p-4 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1">
+              <div class="text-2xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                {highlight.icon}
+              </div>
+              <div class="min-w-0">
+                <div class="font-semibold text-gray-900 text-sm sm:text-base">
+                  {highlight.text}
+                </div>
+                <div class="text-xs sm:text-sm text-gray-600">
+                  {highlight.subtext}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
-      <div class="lg:col-span-8 space-y-8">
-        <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-600">
-          {siteConfig.aboutMe}
-        </p>
+      <div class="lg:col-span-8 flex items-center min-h-[400px]">
+        <!-- Main about content with enhanced styling -->
+        <div class="relative w-full">
+          <div class="absolute inset-0 bg-gradient-to-r from-blue-50/50 to-purple-50/50 rounded-3xl blur-xl"></div>
+          <div class="relative bg-white rounded-3xl border border-gray-200/60 p-8 sm:p-10 md:p-12 shadow-2xl shadow-gray-500/10 hover:shadow-3xl hover:shadow-gray-500/15 hover:-translate-y-2 hover:scale-[1.02] transition-all duration-700 backdrop-blur-sm group">
+            <!-- Quote decoration -->
+            <div class="absolute top-6 left-6 text-5xl text-blue-200/40 font-serif leading-none">"</div>
+            
+            <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-700 relative z-10 pl-12 pr-12 font-medium">
+              {siteConfig.aboutMe}
+            </p>
+            
+            <!-- Bottom decoration -->
+            <div class="absolute bottom-6 right-6 text-5xl text-blue-200/40 font-serif rotate-180 leading-none">"</div>
+            
+            <!-- Subtle glow effect -->
+            <div class="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/5 to-purple-500/5 opacity-100 hover:opacity-75 transition-opacity duration-700"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
