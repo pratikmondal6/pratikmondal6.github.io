@@ -82,7 +82,7 @@ function highlightKeyWords(text: string, color: string): string {
       <div class="relative">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           <div class="lg:col-span-4">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
               Awards
             </h2>
             <div
@@ -120,7 +120,7 @@ function highlightKeyWords(text: string, color: string): string {
 
           <div class="lg:col-span-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {achievementData.map((achievement, index) => (
+              {achievementData.map((achievement) => (
                 <div class="group relative">
                   <div class={`relative bg-gradient-to-br ${achievement.bgColor} rounded-xl border ${achievement.borderColor} p-6 transition-all duration-300 group-hover:-translate-y-1 overflow-hidden`}
                        style={`box-shadow: 0 2px 4px rgba(${achievement.shadowColor}, 0.08), 0 1px 2px rgba(${achievement.shadowColor}, 0.04)`}>

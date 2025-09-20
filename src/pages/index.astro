@@ -16,7 +16,7 @@ import "../styles/global.css";
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={siteConfig.description} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,15 +26,15 @@ import "../styles/global.css";
       rel="stylesheet"
     />
     <title>{siteConfig.name} - {siteConfig.title}</title>
-    <style>
+    <style define:vars={{ accentColor: siteConfig.accentColor }}>
       :root {
-        --accent-color: {siteConfig.accentColor};
+        --accent-color: var(--accentColor);
       }
     </style>
   </head>
   <body>
     <Header />
-    <section>
+    <main>
       <Hero />
       <About />
       <Experience />
@@ -42,7 +42,7 @@ import "../styles/global.css";
       <SkillsExpertise />
       <Projects />
       <Education />
-    </section>
+    </main>
     <Footer />
   </body>
 </html>

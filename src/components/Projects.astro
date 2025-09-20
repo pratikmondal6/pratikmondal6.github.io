@@ -73,7 +73,7 @@ const statusColors: Record<string, string> = {
 
 {
   hasProjects && (
-    <section id="projects" class="p-8 sm:p-12 md:p-16 lg:p-24 relative overflow-hidden">
+    <section id="projects" class="p-8 sm:p-12 md:p-16 lg:p-24 bg-gray-50 relative overflow-hidden">
       <!-- Background decoration -->
       <div class="absolute inset-0 opacity-5">
         <div class="absolute top-32 left-16 w-48 h-48 bg-blue-400 rounded-full blur-3xl"></div>
@@ -83,7 +83,7 @@ const statusColors: Record<string, string> = {
       <div class="relative">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           <div class="lg:col-span-4">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
               Projects
             </h2>
             <div
@@ -121,7 +121,7 @@ const statusColors: Record<string, string> = {
 
           <div class="lg:col-span-8">
             <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
-              {projectData.map((project, index) => {
+              {projectData.map((project) => {
                 const Component = project.link ? "a" : "div";
                 const linkProps = project.link
                   ? {
