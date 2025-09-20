@@ -88,6 +88,7 @@ export const siteConfig = {
       company: "Fraunhofer IEE",
       title: "Research Assistant – Java & DevOps Engineer",
       dateRange: "Jul 2024 – Present",
+      logo: "/logos/fraunhofer-iee-logo.jpg",
       bullets: [
         "Migrated Jenkins pipelines to GitLab CI/CD, reducing build/release time by 10%.",
         "Automated MongoDB 7 backups to MinIO/S3 with two-tier disaster recovery, reducing runtime by 15%.",
@@ -98,6 +99,7 @@ export const siteConfig = {
       company: "Greenable GmbH",
       title: "Full-Stack Software Engineer",
       dateRange: "Oct 2023 – Apr 2024",
+      logo: "/logos/greenable-logo.jpg",
       bullets: [
         "Designed React/Redux + TypeScript interfaces, improving decision workflows by 15%.",
         "Implemented carbon-emission calculation module (Spring Boot, JDBC, REST), improving performance by 10%.",
@@ -108,6 +110,7 @@ export const siteConfig = {
       company: "Brac IT",
       title: "Software Engineer",
       dateRange: "Jul 2019 – Sep 2022",
+      logo: "/logos/brac-it-logo.jpg",
       bullets: [
         "Delivered 5 enterprise-grade production systems (ERP, microservices, API Gateway, Kafka) serving 100K+ users.",
         "Optimized deployments using Maven/Gradle and Docker, cutting release time by 10%.",

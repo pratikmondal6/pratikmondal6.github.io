@@ -1,6 +1,13 @@
 ---
 import { siteConfig } from "../config";
 const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
+
+// Company brand colors
+const companyColors = {
+  "Fraunhofer IEE": "#619E7E",
+  "Greenable GmbH": "#56863F", 
+  "Brac IT": "#0A2D59"
+};
 ---
 
 {
@@ -20,51 +27,87 @@ const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
 
           <div class="lg:col-span-8">
             <div class="relative">
-              {siteConfig.experience.map((exp, index) => (
-                <div class="relative mb-12 last:mb-0">
-                  {/* Timeline dot at top of card */}
-                  <div
-                    class="absolute left-1/2 -top-2 w-4 h-4 bg-white border-2 rounded-full -translate-x-1/2 z-20 transition-all duration-300"
-                    style={`border-color: ${siteConfig.accentColor}; background-color: ${siteConfig.accentColor}`}
-                  />
-
-                  {/* Connecting line below card */}
-                  {index < siteConfig.experience.length - 1 && (
-                    <div class="absolute left-1/2 bottom-0 w-0.5 h-12 bg-gray-300 -translate-x-1/2 translate-y-full z-10" />
-                  )}
-
+              {/* Timeline line */}
+              <div class="absolute left-6 sm:left-8 top-8 bottom-0 w-0.5 bg-gradient-to-b from-gray-200 via-gray-300 to-transparent opacity-60" />
+              
+              {siteConfig.experience.map((exp, index) => {
+                const companyColor = (companyColors as any)[exp.company] || siteConfig.accentColor;
+                return (
+                <div class="relative mb-6 sm:mb-8 last:mb-0 group">
+                  {/* Timeline dot */}
+                  <div class="absolute left-4 sm:left-6 top-6 sm:top-8 w-4 h-4 rounded-full border-4 border-white z-20 transition-all duration-500 group-hover:scale-125"
+                       style={`background-color: ${companyColor}; box-shadow: 0 4px 12px rgba(${companyColor === '#619E7E' ? '97, 158, 126' : companyColor === '#56863F' ? '86, 134, 63' : '10, 45, 89'}, 0.4), 0 2px 6px rgba(${companyColor === '#619E7E' ? '97, 158, 126' : companyColor === '#56863F' ? '86, 134, 63' : '10, 45, 89'}, 0.2)`} />
+                  
                   {/* Experience card */}
-                  <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-4 sm:p-5 md:p-6 hover:shadow-md transition-shadow duration-300">
-                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                      <div>
-                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
-                          {exp.title}
-                        </h3>
-                        <p
-                          class="text-base sm:text-lg"
-                          style={`color: ${siteConfig.accentColor}`}
-                        >
-                          {exp.company}
-                        </p>
+                  <div class="ml-12 sm:ml-16 bg-white rounded-xl sm:rounded-2xl border border-gray-100 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-gray-50"
+                       style={`box-shadow: 0 4px 6px rgba(${companyColor === '#619E7E' ? '97, 158, 126' : companyColor === '#56863F' ? '86, 134, 63' : '10, 45, 89'}, 0.1), 0 2px 4px rgba(${companyColor === '#619E7E' ? '97, 158, 126' : companyColor === '#56863F' ? '86, 134, 63' : '10, 45, 89'}, 0.06)`}
+                       class="hover:shadow-lg"
+                       onmouseenter={`this.style.boxShadow = '0 20px 25px rgba(${companyColor === '#619E7E' ? '97, 158, 126' : companyColor === '#56863F' ? '86, 134, 63' : '10, 45, 89'}, 0.15), 0 10px 10px rgba(${companyColor === '#619E7E' ? '97, 158, 126' : companyColor === '#56863F' ? '86, 134, 63' : '10, 45, 89'}, 0.08)'`}
+                       onmouseleave={`this.style.boxShadow = '0 4px 6px rgba(${companyColor === '#619E7E' ? '97, 158, 126' : companyColor === '#56863F' ? '86, 134, 63' : '10, 45, 89'}, 0.1), 0 2px 4px rgba(${companyColor === '#619E7E' ? '97, 158, 126' : companyColor === '#56863F' ? '86, 134, 63' : '10, 45, 89'}, 0.06)'`}>
+                    {/* Header section */}
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 px-4 sm:px-6 py-4 sm:py-5 border-b border-gray-200 relative overflow-hidden"
+                         style={`border-left: 4px solid ${companyColor}`}>
+                      {/* Subtle background pattern */}
+                      <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      
+                      <div class="relative flex flex-col sm:flex-row sm:items-start sm:justify-between">
+                        <div class="flex-1">
+                          <div class="flex items-center gap-3 sm:gap-4 mb-2">
+                            {/* Company logo */}
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-white border-2 flex items-center justify-center overflow-hidden flex-shrink-0 transition-all duration-300 group-hover:scale-105"
+                                 style={`border-color: ${companyColor}; box-shadow: 0 2px 8px rgba(${companyColor === '#619E7E' ? '97, 158, 126' : companyColor === '#56863F' ? '86, 134, 63' : '10, 45, 89'}, 0.2), 0 1px 3px rgba(${companyColor === '#619E7E' ? '97, 158, 126' : companyColor === '#56863F' ? '86, 134, 63' : '10, 45, 89'}, 0.1)`}>
+                              {exp.logo ? (
+                                <img 
+                                  src={exp.logo} 
+                                  alt={`${exp.company} logo`}
+                                  class="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-md sm:rounded-lg transition-transform duration-300 group-hover:scale-110"
+                                />
+                              ) : (
+                                <div class="w-5 h-5 sm:w-6 sm:h-6 rounded transition-transform duration-300 group-hover:scale-110"
+                                     style={`background: linear-gradient(135deg, ${companyColor}, ${companyColor}80)`} />
+                              )}
+                            </div>
+                            <div class="min-w-0 flex-1">
+                              <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 leading-tight truncate transition-colors duration-300 group-hover:text-gray-800">
+                                {exp.company}
+                              </h3>
+                              <p class="text-sm sm:text-base lg:text-lg font-medium mt-1 leading-tight transition-colors duration-300"
+                                 style={`color: ${companyColor}`}>
+                                {exp.title}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flex items-center gap-2 mt-3 sm:mt-0 flex-shrink-0">
+                          <div class="w-2 h-2 rounded-full animate-pulse" style={`background-color: ${companyColor}`} />
+                          <span class="text-xs sm:text-sm font-medium text-gray-600 bg-white px-2 sm:px-3 py-1 rounded-full border border-gray-200 whitespace-nowrap transition-all duration-300 group-hover:bg-gray-50 group-hover:border-gray-300">
+                            {exp.dateRange}
+                          </span>
+                        </div>
                       </div>
-                      <span class="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-0">
-                        {exp.dateRange}
-                      </span>
                     </div>
 
-                    <ul class="space-y-2">
-                      {exp.bullets.map((bullet) => (
-                        <li class="flex items-start">
-                          <span class="inline-block w-1.5 h-1.5 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
-                          <span class="text-sm sm:text-base text-gray-600">
-                            {bullet}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
+                    {/* Content section */}
+                    <div class="p-4 sm:p-6">
+                      <div class="space-y-3 sm:space-y-4">
+                        {exp.bullets.map((bullet, bulletIndex) => (
+                          <div class="flex items-start group/bullet opacity-0 animate-[fadeInUp_0.6s_ease-out_forwards]" style={`animation-delay: ${bulletIndex * 0.1}s`}>
+                            <div class="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-gray-200 flex items-center justify-center mt-0.5 mr-3 sm:mr-4 transition-all duration-300 group-hover/bullet:scale-110"
+                                 style={`border-color: ${companyColor}20`}>
+                              <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-gray-300 transition-all duration-300"
+                                   style={`background-color: ${companyColor}40`} />
+                            </div>
+                            <p class="text-gray-700 leading-relaxed text-sm sm:text-base font-medium transition-colors duration-300 group-hover/bullet:text-gray-900">
+                              {bullet}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
