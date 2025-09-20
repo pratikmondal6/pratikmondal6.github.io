@@ -3,27 +3,67 @@ import { siteConfig } from "../config";
 
 const hasAchievements = siteConfig.achievements && siteConfig.achievements.length > 0;
 
-// Very light color variants for each card
-const cardColors = [
-  'bg-gradient-to-br from-blue-50 to-blue-50 border-blue-100',
-  'bg-gradient-to-br from-emerald-50 to-emerald-50 border-emerald-100', 
-  'bg-gradient-to-br from-violet-50 to-violet-50 border-violet-100',
-  'bg-gradient-to-br from-amber-50 to-amber-50 border-amber-100'
+// Enhanced achievement data with distinct company colors
+const achievementData = [
+  {
+    text: siteConfig.achievements[0], // Smart Farming Hackathon 2025
+    icon: "🏆",
+    category: "Innovation",
+    color: "#619E7E", // Fraunhofer green
+    bgColor: "from-green-50/40 to-emerald-50/30",
+    borderColor: "border-green-100",
+    shadowColor: "97, 158, 126"
+  },
+  {
+    text: siteConfig.achievements[1], // Smart Farming Hackathon 2024 - Fraunhofer IESE
+    icon: "🥇",
+    category: "Excellence", 
+    color: "#619E7E", // Fraunhofer green (same organization)
+    bgColor: "from-green-50/40 to-emerald-50/30",
+    borderColor: "border-green-100",
+    shadowColor: "97, 158, 126"
+  },
+  {
+    text: siteConfig.achievements[2], // Porsche Informatik Project Manager
+    icon: "🚀",
+    category: "Leadership",
+    color: "#094882", // Porsche blue
+    bgColor: "from-blue-50/40 to-sky-50/30",
+    borderColor: "border-blue-100",
+    shadowColor: "9, 72, 130"
+  },
+  {
+    text: siteConfig.achievements[3], // HackerRank Java (general technical achievement)
+    icon: "💻",
+    category: "Technical",
+    color: "#0A2D59", // Brac IT navy (professional development context)
+    bgColor: "from-slate-50/40 to-blue-50/30",
+    borderColor: "border-slate-100",
+    shadowColor: "10, 45, 89"
+  }
 ];
 
-// Function to highlight key words
-function highlightKeyWords(text: string): string {
+// Function to highlight key words with enhanced styling
+function highlightKeyWords(text: string, color: string): string {
   const keyWords = [
-    { word: '2nd Position', color: 'text-blue-600 font-bold' },
-    { word: 'Best Team', color: 'text-emerald-600 font-bold' },
-    { word: 'Porsche Informatik', color: 'text-violet-600 font-bold' },
-    { word: 'HackerRank', color: 'text-amber-600 font-bold' }
+    { word: '2nd Position', highlight: true },
+    { word: 'Best Team Award', highlight: true },
+    { word: 'Project Manager', highlight: true },
+    { word: 'Java Problem Solver', highlight: true },
+    { word: 'Smart Farming Hackathon', highlight: false },
+    { word: 'Fraunhofer IESE', highlight: false },
+    { word: 'Porsche Informatik', highlight: false },
+    { word: 'HackerRank', highlight: false }
   ];
 
   let highlightedText = text;
-  keyWords.forEach(({ word, color }) => {
+  keyWords.forEach(({ word, highlight }) => {
     const regex = new RegExp(`(${word})`, 'gi');
-    highlightedText = highlightedText.replace(regex, `<span class="${color}">$1</span>`);
+    if (highlight) {
+      highlightedText = highlightedText.replace(regex, `<span class="font-bold" style="color: ${color}">$1</span>`);
+    } else {
+      highlightedText = highlightedText.replace(regex, `<span class="font-semibold text-gray-800">$1</span>`);
+    }
   });
 
   return highlightedText;
@@ -32,8 +72,14 @@ function highlightKeyWords(text: string): string {
 
 {
   hasAchievements && (
-    <section id="achievements" class="p-8 sm:p-12 md:p-16 lg:p-24">
-      <div>
+    <section id="achievements" class="p-8 sm:p-12 md:p-16 lg:p-24 relative overflow-hidden">
+      <!-- Background decoration -->
+      <div class="absolute inset-0 opacity-5">
+        <div class="absolute top-10 right-20 w-40 h-40 bg-yellow-400 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 left-20 w-32 h-32 bg-purple-400 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div class="relative">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           <div class="lg:col-span-4">
             <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
@@ -43,16 +89,50 @@ function highlightKeyWords(text: string): string {
               class="w-[75px] h-[5px] mt-2 rounded-full"
               style={`background-color: ${siteConfig.accentColor}`}
             />
+            
+            <!-- Achievement summary -->
+            <div class="mt-8 p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-gray-900 mb-1">{siteConfig.achievements.length}</div>
+                <div class="text-xs text-gray-500 font-medium uppercase tracking-wide">Major Achievements</div>
+                <div class="mt-3 flex justify-center gap-1.5">
+                  <div class="w-1.5 h-1.5 rounded-full" style="background-color: #619E7E"></div>
+                  <div class="w-1.5 h-1.5 rounded-full" style="background-color: #619E7E"></div>
+                  <div class="w-1.5 h-1.5 rounded-full" style="background-color: #094882"></div>
+                  <div class="w-1.5 h-1.5 rounded-full" style="background-color: #0A2D59"></div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="lg:col-span-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {siteConfig.achievements.map((achievement, index) => (
-                <div class={`${cardColors[index % cardColors.length]} rounded-xl shadow-lg p-6 hover:shadow-xl hover:scale-105 transition-all duration-300`}>
-                  
-                  {/* Award Content */}
-                  <p class="text-gray-700 text-sm sm:text-base leading-relaxed font-medium" set:html={highlightKeyWords(achievement)}>
-                  </p>
+              {achievementData.map((achievement, index) => (
+                <div class="group relative">
+                  <div class={`relative bg-gradient-to-br ${achievement.bgColor} rounded-xl border ${achievement.borderColor} p-6 transition-all duration-300 group-hover:-translate-y-1 overflow-hidden`}
+                       style={`box-shadow: 0 2px 4px rgba(${achievement.shadowColor}, 0.08), 0 1px 2px rgba(${achievement.shadowColor}, 0.04)`}>
+                    
+                    <!-- Minimal header -->
+                    <div class="flex items-center gap-3 mb-4">
+                      <div class="w-8 h-8 rounded-lg bg-white border flex items-center justify-center shadow-sm"
+                           style={`border-color: rgba(${achievement.shadowColor}, 0.15)`}>
+                        <span class="text-lg">{achievement.icon}</span>
+                      </div>
+                      <div>
+                        <div class="text-xs font-medium text-gray-500 uppercase tracking-wide">
+                          {achievement.category}
+                        </div>
+                        <div class="w-6 h-0.5 rounded-full mt-1" style={`background-color: ${achievement.color}`}></div>
+                      </div>
+                    </div>
+                    
+                    <!-- Achievement content -->
+                    <div class="relative z-10">
+                      <p class="text-gray-700 text-sm sm:text-base leading-relaxed" 
+                         set:html={highlightKeyWords(achievement.text, achievement.color)}>
+                      </p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
