@@ -1,12 +1,52 @@
 ---
 import { siteConfig } from "../config";
 const hasEducation = siteConfig.education && siteConfig.education.length > 0;
+
+// Enhanced education data with university brand colors
+const educationData = [
+  {
+    ...siteConfig.education[0], // Master's - RPTU
+    level: "Graduate",
+    status: "In Progress",
+    color: "#4C3575", // RPTU purple
+    bgColor: "from-purple-50/15 to-violet-50/10",
+    borderColor: "border-gray-100",
+    shadowColor: "76, 53, 117",
+    icon: "🎓",
+    location: "Germany",
+    highlight: "Current Studies"
+  },
+  {
+    ...siteConfig.education[1], // Bachelor's - AIUB
+    level: "Undergraduate", 
+    status: "Completed",
+    color: "#004EA2", // AIUB blue
+    bgColor: "from-blue-50/15 to-sky-50/10",
+    borderColor: "border-gray-100",
+    shadowColor: "0, 78, 162",
+    icon: "📚",
+    location: "Bangladesh",
+    highlight: "Honor Graduate"
+  }
+];
+
+// Status colors for academic progress
+const statusColors: Record<string, string> = {
+  "In Progress": "#4C3575", // RPTU purple
+  "Completed": "#004EA2"    // AIUB blue
+};
 ---
 
 {
   hasEducation && (
-    <section id="education" class="p-8 sm:p-12 md:p-16 lg:p-24">
-      <div>
+    <section id="education" class="p-8 sm:p-12 md:p-16 lg:p-24 relative overflow-hidden">
+      <!-- Background decoration with university colors -->
+      <div class="absolute inset-0 opacity-5">
+        <div class="absolute top-20 right-16 w-40 h-40 rounded-full blur-3xl" style="background-color: #4C3575"></div>
+        <div class="absolute bottom-16 left-20 w-32 h-32 rounded-full blur-3xl" style="background-color: #004EA2"></div>
+      </div>
+      
+      <div class="relative">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           <div class="lg:col-span-4">
             <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
@@ -16,39 +56,84 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
               class="w-[75px] h-[5px] mt-2 rounded-full"
               style={`background-color: ${siteConfig.accentColor}`}
             />
+            
+            <!-- Academic level pills -->
+            <div class="mt-6 flex flex-wrap gap-3">
+              <div class="group px-4 py-2 bg-white/60 backdrop-blur-sm border border-gray-200 rounded-full text-sm font-medium text-gray-700 transition-all duration-300 hover:bg-white hover:shadow-md hover:scale-105 cursor-default"
+                   style="border-color: #4C357530">
+                <div class="flex items-center gap-2">
+                  <div class="w-2 h-2 rounded-full" style="background-color: #4C3575"></div>
+                  <span>Master's Degree</span>
+                </div>
+              </div>
+              
+              <div class="group px-4 py-2 bg-white/60 backdrop-blur-sm border border-gray-200 rounded-full text-sm font-medium text-gray-700 transition-all duration-300 hover:bg-white hover:shadow-md hover:scale-105 cursor-default"
+                   style="border-color: #004EA230">
+                <div class="flex items-center gap-2">
+                  <div class="w-2 h-2 rounded-full" style="background-color: #004EA2"></div>
+                  <span>Bachelor's Degree</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="lg:col-span-8">
-            <div class="space-y-8">
-              {siteConfig.education.map((edu) => (
-                <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-4 sm:p-5 md:p-6 hover:shadow-md transition-shadow duration-300">
-                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
-                    <div>
-                      <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
-                        {edu.degree}
-                      </h3>
-                      <p
-                        class="text-base sm:text-lg"
-                        style={`color: ${siteConfig.accentColor}`}
-                      >
-                        {edu.school}
-                      </p>
+            <div class="space-y-6">
+              {educationData.map((edu, index) => (
+                <div class="group relative">
+                  <div class="absolute inset-0 bg-gradient-to-r rounded-xl blur-xl opacity-5 group-hover:opacity-10 transition-opacity duration-500"
+                       style={`background-color: ${edu.color}`}></div>
+                  
+                  <div class={`relative flex flex-col bg-gradient-to-br ${edu.bgColor} rounded-xl border ${edu.borderColor} p-6 transition-all duration-500 group-hover:-translate-y-1 group-hover:scale-[1.01] overflow-hidden`}
+                       style={`box-shadow: 0 4px 6px rgba(${edu.shadowColor}, 0.1), 0 2px 4px rgba(${edu.shadowColor}, 0.06)`}>
+                    
+                    {/* Header with academic info */}
+                    <div class="flex items-start justify-between mb-4">
+                      <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-white/90 backdrop-blur-sm border flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300"
+                             style={`border-color: ${edu.color}20`}>
+                          <span class="text-xl">{edu.icon}</span>
+                        </div>
+                        <div>
+                          <div class="text-xs font-semibold uppercase tracking-wide" style={`color: ${edu.color}`}>
+                            {edu.level} • {edu.location}
+                          </div>
+                          <div class="text-lg font-bold text-gray-900 leading-tight">
+                            {edu.highlight}
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Status and timeline */}
+                      <div class="text-right space-y-2">
+                        <div class="flex items-center gap-1.5 px-3 py-1.5 bg-white/80 backdrop-blur-sm rounded-lg text-xs font-medium border"
+                             style={`color: ${statusColors[edu.status]}; border-color: ${statusColors[edu.status]}20`}>
+                          <div class="w-2 h-2 rounded-full" style={`background-color: ${statusColors[edu.status]}`}></div>
+                          {edu.status}
+                        </div>
+                        <div class="text-xs text-gray-500 font-medium bg-gray-100 px-2 py-1 rounded-md">
+                          {edu.dateRange}
+                        </div>
+                      </div>
                     </div>
-                    <span class="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-0">
-                      {edu.dateRange}
-                    </span>
-                  </div>
 
-                  <ul class="space-y-2">
-                    {edu.achievements.map((achievement) => (
-                      <li class="flex items-start">
-                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
-                        <span class="text-sm sm:text-base text-gray-600">
-                          {achievement}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                    {/* Academic content */}
+                    <div class="space-y-4">
+                      <div>
+                        <h3 class="text-xl font-bold text-gray-900 leading-tight mb-2">
+                          {edu.degree}
+                        </h3>
+                        <p class="text-base font-medium text-gray-700 mb-1" style={`color: ${edu.color}`}>
+                          {edu.school}
+                        </p>
+                      </div>
+                    </div>
+                    
+                    {/* Subtle corner accent */}
+                    <div class="absolute bottom-0 right-0 w-12 h-12 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
+                      <div class="absolute bottom-3 right-3 w-6 h-6 rounded-full" style={`background-color: ${edu.color}`}></div>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>

@@ -240,9 +240,13 @@ const companyColors = {
 
     // Wait for scroll to complete, then highlight the company
     setTimeout(() => {
-      // Remove any existing highlights
-      document.querySelectorAll('.experience-highlight').forEach(el => {
-        el.classList.remove('experience-highlight');
+      // Remove any existing highlights by resetting styles
+      document.querySelectorAll('#experience .bg-white').forEach(el => {
+        const htmlEl = el as HTMLElement;
+        htmlEl.style.removeProperty('box-shadow');
+        htmlEl.style.removeProperty('border-color');
+        htmlEl.style.removeProperty('transform');
+        htmlEl.style.removeProperty('transition');
       });
 
       // Find and highlight the specific company experience card
@@ -254,21 +258,44 @@ const companyColors = {
         'porsche-informatik': 'Porsche Informatik'
       };
 
+      // Company-specific highlight colors
+      const highlightColors: Record<string, { color: string, rgba: string }> = {
+        'fraunhofer-iee': { color: '#619E7E', rgba: '97, 158, 126' },
+        'greenable': { color: '#56863F', rgba: '86, 134, 63' },
+        'brac-it': { color: '#0A2D59', rgba: '10, 45, 89' },
+        'porsche-informatik': { color: '#094882', rgba: '9, 72, 130' }
+      };
+
       experienceCards.forEach(card => {
-        const companyElement = card.querySelector('[style*="color:"]');
+        // Look for the company name in the h3 element
+        const companyElement = card.querySelector('h3');
         if (companyElement && companyElement.textContent?.trim() === companyNames[companyId]) {
-          card.classList.add('experience-highlight');
+          const highlightColor = highlightColors[companyId];
+          const htmlCard = card as HTMLElement;
+          
+          // Apply company-specific highlight styling with !important to override
+          htmlCard.style.cssText += `
+            box-shadow: 0 0 0 4px rgba(${highlightColor.rgba}, 0.4), 0 0 25px rgba(${highlightColor.rgba}, 0.3), 0 15px 35px rgba(${highlightColor.rgba}, 0.15) !important;
+            border-color: ${highlightColor.color} !important;
+            transform: scale(1.03) !important;
+            transition: all 0.3s ease !important;
+          `;
           
           // Scroll the specific card into view for better positioning
-          card.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'center'
-          });
-          
-          // Remove highlight after 3 seconds
           setTimeout(() => {
-            card.classList.remove('experience-highlight');
-          }, 3000);
+            card.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'center'
+            });
+          }, 200);
+          
+          // Remove highlight after 4 seconds
+          setTimeout(() => {
+            htmlCard.style.removeProperty('box-shadow');
+            htmlCard.style.removeProperty('border-color');
+            htmlCard.style.removeProperty('transform');
+            htmlCard.style.removeProperty('transition');
+          }, 4000);
         }
       });
     }, 800);

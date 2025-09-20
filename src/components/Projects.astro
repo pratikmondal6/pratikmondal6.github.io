@@ -91,54 +91,29 @@ const statusColors: Record<string, string> = {
               style={`background-color: ${siteConfig.accentColor}`}
             />
             
-            <!-- Enhanced Projects summary -->
-            <div class="mt-8 space-y-6">
-              <div class="p-6 bg-white rounded-2xl border border-gray-100 shadow-lg">
-                <div class="text-center space-y-4">
-                  <div class="text-3xl font-bold text-gray-900 mb-1">{projectData.length}</div>
-                  <div class="text-sm text-gray-600 font-medium">Featured Projects</div>
-                  
-                  <!-- Impact metrics showcase -->
-                  <div class="grid grid-cols-1 gap-3 pt-4 border-t border-gray-100">
-                    <div class="flex items-center justify-between text-xs">
-                      <span class="text-gray-600">🏆 40% User Growth</span>
-                      <div class="w-12 h-1 bg-blue-200 rounded-full">
-                        <div class="w-8 h-1 bg-blue-500 rounded-full"></div>
-                      </div>
-                    </div>
-                    <div class="flex items-center justify-between text-xs">
-                      <span class="text-gray-600">⚡ 50% Work Reduction</span>
-                      <div class="w-12 h-1 bg-green-200 rounded-full">
-                        <div class="w-6 h-1 bg-green-500 rounded-full"></div>
-                      </div>
-                    </div>
-                    <div class="flex items-center justify-between text-xs">
-                      <span class="text-gray-600">🔬 1000+ Papers Analyzed</span>
-                      <div class="w-12 h-1 bg-purple-200 rounded-full">
-                        <div class="w-10 h-1 bg-purple-500 rounded-full"></div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <!-- Tech categories -->
-                  <div class="grid grid-cols-2 gap-3 text-xs pt-4 border-t border-gray-100">
-                    <div class="flex items-center gap-2">
-                      <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
-                      <span class="text-gray-600">ML & AI</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <div class="w-2 h-2 rounded-full bg-blue-400"></div>
-                      <span class="text-gray-600">Enterprise</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <div class="w-2 h-2 rounded-full bg-green-400"></div>
-                      <span class="text-gray-600">IoT Systems</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <div class="w-2 h-2 rounded-full bg-purple-400"></div>
-                      <span class="text-gray-600">Analytics</span>
-                    </div>
-                  </div>
+            <!-- Project domain pills -->
+            <div class="mt-6 flex flex-wrap gap-3">
+              <div class="group px-4 py-2 bg-white/60 backdrop-blur-sm border border-gray-200 rounded-full text-sm font-medium text-gray-700 transition-all duration-300 hover:bg-white hover:shadow-md hover:scale-105 cursor-default"
+                   style="border-color: #619E7E30">
+                <div class="flex items-center gap-2">
+                  <div class="w-2 h-2 rounded-full" style="background-color: #619E7E"></div>
+                  <span>AI & ML</span>
+                </div>
+              </div>
+              
+              <div class="group px-4 py-2 bg-white/60 backdrop-blur-sm border border-gray-200 rounded-full text-sm font-medium text-gray-700 transition-all duration-300 hover:bg-white hover:shadow-md hover:scale-105 cursor-default"
+                   style="border-color: #56863F30">
+                <div class="flex items-center gap-2">
+                  <div class="w-2 h-2 rounded-full" style="background-color: #56863F"></div>
+                  <span>IoT Systems</span>
+                </div>
+              </div>
+              
+              <div class="group px-4 py-2 bg-white/60 backdrop-blur-sm border border-gray-200 rounded-full text-sm font-medium text-gray-700 transition-all duration-300 hover:bg-white hover:shadow-md hover:scale-105 cursor-default"
+                   style="border-color: #0A2D5930">
+                <div class="flex items-center gap-2">
+                  <div class="w-2 h-2 rounded-full" style="background-color: #0A2D59"></div>
+                  <span>Enterprise</span>
                 </div>
               </div>
             </div>
