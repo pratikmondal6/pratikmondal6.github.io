@@ -5,57 +5,57 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
 // Enhanced project data with very light, subtle colors
 const projectData = [
   {
-    ...siteConfig.projects[0], // AI-Powered Knowledge Graph
+    ...siteConfig.projects[0],
     name: "AI Knowledge Graph",
     description: "LLM + Neo4j system analyzing research papers with automated entity extraction and visualization.",
     category: "Machine Learning",
     status: "Completed",
-    color: "#619E7E", // Fraunhofer green (research context)
-    bgColor: "from-emerald-50/20 to-green-50/15",
-    borderColor: "border-gray-100",
-    shadowColor: "97, 158, 126",
+    color: "#7EC8E3", // Pastel blue
+    bgColor: "from-blue-100/40 via-cyan-50/30 to-white/80",
+    borderColor: "border-blue-100",
+    shadowColor: "126, 200, 227",
     icon: "🤖",
     impact: "1000+ Papers",
     skills: ["Python", "Neo4j", "LLM"]
   },
   {
-    ...siteConfig.projects[1], // Farmbot – Digital Agriculture
+    ...siteConfig.projects[1],
     name: "Farmbot Agriculture",
     description: "AI-powered IoT system with automated seeding, irrigation, and real-time soil monitoring.",
     category: "IoT & AI",
     status: "Live",
-    color: "#56863F", // Greenable green (agriculture/sustainability theme)
-    bgColor: "from-green-50/20 to-lime-50/15",
-    borderColor: "border-gray-100",
-    shadowColor: "86, 134, 63",
+    color: "#B7E4C7", // Pastel green
+    bgColor: "from-green-100/40 via-lime-50/30 to-white/80",
+    borderColor: "border-green-100",
+    shadowColor: "183, 228, 199",
     icon: "🌱",
     impact: "Automated",
     skills: ["Node.js", "ReactJS", "IoT"]
   },
   {
-    ...siteConfig.projects[2], // Shongjog – Emergency Service
+    ...siteConfig.projects[2],
     name: "Emergency Service Platform",
     description: "Enterprise emergency services mapping platform delivering improved user engagement.",
     category: "Enterprise",
     status: "Production",
-    color: "#0A2D59", // Brac IT navy (Brac project)
-    bgColor: "from-blue-50/20 to-slate-50/15",
-    borderColor: "border-gray-100",
-    shadowColor: "10, 45, 89",
+    color: "#F7D6E0", // Pastel pink
+    bgColor: "from-pink-100/40 via-fuchsia-50/30 to-white/80",
+    borderColor: "border-pink-100",
+    shadowColor: "247, 214, 224",
     icon: "🚨",
     impact: "+40% MAU",
     skills: ["Java", "Spring", "Angular"]
   },
   {
-    ...siteConfig.projects[3], // Smart Farming Compliance Tool
+    ...siteConfig.projects[3],
     name: "Compliance Analytics",
     description: "Smart farming compliance solution with field-specific guidance and regulatory automation.",
     category: "Analytics",
     status: "Active",
-    color: "#094882", // Porsche blue (enterprise collaboration)
-    bgColor: "from-sky-50/20 to-blue-50/15",
-    borderColor: "border-gray-100",
-    shadowColor: "9, 72, 130",
+    color: "#FFFACD", // Pastel yellow
+    bgColor: "from-yellow-100/40 via-amber-50/30 to-white/80",
+    borderColor: "border-yellow-100",
+    shadowColor: "255, 250, 205",
     icon: "📊",
     impact: "50% Less Work",
     skills: ["Java", "Spring Boot", "GeoBox"]
@@ -82,7 +82,7 @@ const statusColors: Record<string, string> = {
               Projects
             </h2>
             <div
-              class="w-[75px] h-[5px] mt-2 rounded-full"
+              class="w-[75px] h-[5px] mt-2 rounded-full bg-blue-500/30"
               style={`background-color: ${siteConfig.accentColor}`}
             />
             
@@ -162,7 +162,7 @@ const statusColors: Record<string, string> = {
                           </div>
                           
                           {project.link && (
-                            <div class="w-8 h-8 flex items-center justify-center bg-gray-900 rounded-lg text-white transition-all duration-300 group-hover:bg-gray-700 group-hover:scale-110">
+                            <div class="w-8 h-8 flex items-center justify-center bg-blue-50 text-blue-500 rounded-lg transition-all duration-300 group-hover:bg-blue-100 group-hover:text-blue-700 group-hover:scale-110 border border-blue-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2">
                               <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17"/>
                               </svg>
