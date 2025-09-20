@@ -1,0 +1,166 @@
+---
+import { siteConfig } from "../config";
+
+const { skillsAndExpertise } = siteConfig;
+---
+
+<section id="skillsandexpertise" class="p-8 sm:p-12 md:p-16 lg:p-24 bg-gray-50">
+  <div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+      <div class="lg:col-span-4">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
+          Technical Skills
+        </h2>
+        <div
+          class="w-[75px] h-[5px] mt-2 rounded-full"
+          style={`background-color: ${siteConfig.accentColor}`}
+        />
+        <p class="text-gray-600 mt-4 text-lg">
+          Comprehensive technical expertise across full-stack development, DevOps, and modern frameworks.
+        </p>
+      </div>
+
+      <div class="lg:col-span-8">
+        <div class="space-y-6">
+          
+          {/* Core Technologies */}
+          <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+            <h3 class="text-lg font-bold mb-4 text-gray-900 flex items-center">
+              <span class="w-2 h-2 rounded-full mr-3" style={`background-color: ${siteConfig.accentColor}`}></span>
+              Core Technologies
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="text-sm font-semibold mb-3 text-gray-700">Programming Languages</h4>
+                <div class="flex flex-wrap gap-2">
+                  {skillsAndExpertise.programmingLanguages.map((skill) => (
+                    <span class="bg-blue-50 text-blue-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-blue-100 transition-colors duration-300 border border-blue-200">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold mb-3 text-gray-700">Frameworks</h4>
+                <div class="flex flex-wrap gap-2">
+                  {skillsAndExpertise.frameworks.map((skill) => (
+                    <span class="bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-emerald-100 transition-colors duration-300 border border-emerald-200">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Backend & Infrastructure */}
+          <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+            <h3 class="text-lg font-bold mb-4 text-gray-900 flex items-center">
+              <span class="w-2 h-2 rounded-full mr-3" style={`background-color: ${siteConfig.accentColor}`}></span>
+              Backend & Infrastructure
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="text-sm font-semibold mb-3 text-gray-700">Backend & APIs</h4>
+                <div class="flex flex-wrap gap-2">
+                  {skillsAndExpertise.backendAPIs.map((skill) => (
+                    <span class="bg-purple-50 text-purple-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-purple-100 transition-colors duration-300 border border-purple-200">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold mb-3 text-gray-700">DevOps & Cloud</h4>
+                <div class="flex flex-wrap gap-2">
+                  {skillsAndExpertise.devOps.map((skill) => (
+                    <span class="bg-orange-50 text-orange-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-orange-100 transition-colors duration-300 border border-orange-200">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Data & Frontend */}
+          <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+            <h3 class="text-lg font-bold mb-4 text-gray-900 flex items-center">
+              <span class="w-2 h-2 rounded-full mr-3" style={`background-color: ${siteConfig.accentColor}`}></span>
+              Data & User Interface
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="text-sm font-semibold mb-3 text-gray-700">Databases</h4>
+                <div class="flex flex-wrap gap-2">
+                  {skillsAndExpertise.databases.map((skill) => (
+                    <span class="bg-teal-50 text-teal-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-teal-100 transition-colors duration-300 border border-teal-200">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold mb-3 text-gray-700">Frontend</h4>
+                <div class="flex flex-wrap gap-2">
+                  {skillsAndExpertise.frontend.map((skill) => (
+                    <span class="bg-pink-50 text-pink-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-pink-100 transition-colors duration-300 border border-pink-200">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Tools & Methodologies */}
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+              <h4 class="text-lg font-bold mb-4 text-gray-900 flex items-center">
+                <span class="w-2 h-2 rounded-full mr-3" style={`background-color: ${siteConfig.accentColor}`}></span>
+                Tools & AI/ML
+              </h4>
+              <div class="space-y-4">
+                <div>
+                  <h5 class="text-sm font-semibold mb-2 text-gray-600">Development Tools</h5>
+                  <div class="flex flex-wrap gap-2">
+                    {skillsAndExpertise.tools.map((skill) => (
+                      <span class="bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-indigo-100 transition-colors duration-300 border border-indigo-200">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h5 class="text-sm font-semibold mb-2 text-gray-600">AI & Machine Learning</h5>
+                  <div class="flex flex-wrap gap-2">
+                    {skillsAndExpertise.machineLearning.map((skill) => (
+                      <span class="bg-violet-50 text-violet-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-violet-100 transition-colors duration-300 border border-violet-200">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+              <h4 class="text-lg font-bold mb-4 text-gray-900 flex items-center">
+                <span class="w-2 h-2 rounded-full mr-3" style={`background-color: ${siteConfig.accentColor}`}></span>
+                Methodologies
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                {skillsAndExpertise.methodologies.map((skill) => (
+                  <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-slate-200 transition-colors duration-300 border border-slate-200">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,317 @@
+---
+import { siteConfig } from "../config";
+---
+
+<div
+  id="hero"
+  class="relative isolate overflow-hidden bg-white py-24 md:h-screen"
+  style={`--accent-color: ${siteConfig.accentColor}`}
+>
+  <!-- Gradient overlay -->
+  <div
+    class="absolute inset-0 -z-10"
+    style={`background: radial-gradient(ellipse 800px 1200px at 0% 0%, ${siteConfig.accentColor}40 0%, ${siteConfig.accentColor}25 20%, ${siteConfig.accentColor}10 40%, rgba(255, 255, 255, 0.3) 70%, rgba(255, 255, 255, 0.8) 90%, white 100%)`}
+  >
+  </div>
+  <svg
+    aria-hidden="true"
+    class="absolute inset-0 -z-10 size-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+  >
+    <defs>
+      <pattern
+        x="50%"
+        y={-1}
+        id="0787a7c5-978c-4f66-83c7-11c213f99cb7"
+        width={200}
+        height={200}
+        patternUnits="userSpaceOnUse"
+      >
+        <path d="M.5 200V.5H200" fill="none"></path>
+      </pattern>
+    </defs>
+    <rect
+      fill="url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)"
+      width="100%"
+      height="100%"
+      stroke-width={0}></rect>
+  </svg>
+  <div class="h-full mx-auto p-8 sm:p-12 md:p-24 flex items-center">
+    <div>
+      <h2
+        class="text-pretty text-xl sm:text-2xl md:text-5xl font-bold tracking-tight text-gray-700 animate-fade-in"
+      >
+        Hello! 👋
+      </h2>
+      <h1
+        class="mt-6 sm:mt-8 md:mt-10 text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-gray-800 animate-fade-in animation-delay-200"
+      >
+        I'm <span style={{ color: siteConfig.accentColor }}
+          >{siteConfig.name}</span
+        >
+      </h1>
+      <p
+        class="mt-4 sm:mt-6 md:mt-8 text-pretty text-base sm:text-lg md:text-xl/8 font-medium text-gray-600 animate-fade-in animation-delay-400"
+      >
+        {siteConfig.title}
+      </p>
+    </div>
+  </div>
+  <!-- Clean Professional Company Showcase -->
+  <div class="absolute bottom-0 left-0 right-0">
+    <div class="relative overflow-hidden">
+      <!-- Subtle Background Glow -->
+      <div class="absolute inset-0 h-32"
+           style={`background: linear-gradient(180deg, transparent 0%, ${siteConfig.accentColor}08 50%, ${siteConfig.accentColor}15 100%)`}>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="relative z-10 px-8 sm:px-12 md:px-24 py-12">
+        <div class="max-w-6xl mx-auto">
+          
+          <!-- Premium Logo Gallery -->
+          <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-8 md:gap-10 mb-8">
+            <!-- Fraunhofer IEE -->
+            <div class="group relative cursor-pointer" onclick="scrollToExperience('fraunhofer-iee')">
+              <div class="absolute inset-0 rounded-xl blur-lg opacity-25 group-hover:opacity-40 transition-opacity duration-500"
+                   style={`background-color: ${siteConfig.accentColor}`}>
+              </div>
+              <div class="relative bg-white/60 backdrop-blur-lg rounded-xl p-3 sm:p-4 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 hover:-translate-y-1">
+                <img 
+                  src="/logos/fraunhofer-iee-logo.jpg" 
+                  alt="Fraunhofer IEE" 
+                  class="h-6 sm:h-8 md:h-9 w-auto object-contain transition-all duration-500"
+                  loading="lazy"
+                />
+                <!-- Active Badge -->
+                <div class="absolute -top-1 -right-1 w-4 h-4 rounded-full flex items-center justify-center"
+                     style={`background-color: ${siteConfig.accentColor}`}>
+                  <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+                </div>
+              </div>
+              
+              <!-- Timeline Tooltip -->
+              <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50">
+                <div class="backdrop-blur-xl rounded-lg px-3 py-2 text-center shadow-xl border border-white/20 cursor-pointer" style={`background: linear-gradient(135deg, ${siteConfig.accentColor}15 0%, ${siteConfig.accentColor}25 100%); box-shadow: 0 4px 12px rgba(0,0,0,0.1), 0 0 0 1px rgba(255,255,255,0.1)`}>
+                  <div class="text-violet-700 text-xs font-mono whitespace-nowrap font-semibold">
+                    Jul 2024 – Present
+                  </div>
+                </div>
+                <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-3 border-r-3 border-t-3 border-transparent" style={`border-top-color: ${siteConfig.accentColor}25`}></div>
+              </div>
+            </div>
+
+            <!-- Greenable GmbH -->
+            <div class="group relative cursor-pointer" onclick="scrollToExperience('greenable')">
+              <div class="absolute inset-0 rounded-xl blur-lg opacity-20 group-hover:opacity-35 transition-opacity duration-500 bg-emerald-500">
+              </div>
+              <div class="relative bg-white/60 backdrop-blur-lg rounded-xl p-3 sm:p-4 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 hover:-translate-y-1">
+                <img 
+                  src="/logos/greenable-logo.jpg" 
+                  alt="Greenable GmbH" 
+                  class="h-6 sm:h-8 md:h-9 w-auto object-contain transition-all duration-500"
+                  loading="lazy"
+                />
+              </div>
+              
+              <!-- Timeline Tooltip -->
+              <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50">
+                <div class="backdrop-blur-xl rounded-lg px-3 py-2 text-center shadow-xl border border-white/20 cursor-pointer bg-emerald-100/80" style="box-shadow: 0 4px 12px rgba(0,0,0,0.1), 0 0 0 1px rgba(255,255,255,0.1)">
+                  <div class="text-emerald-700 text-xs font-mono whitespace-nowrap font-semibold">
+                    Oct 2023 – Apr 2024
+                  </div>
+                </div>
+                <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-3 border-r-3 border-t-3 border-transparent border-t-emerald-100/80"></div>
+              </div>
+            </div>
+
+            <!-- BRAC IT -->
+            <div class="group relative cursor-pointer" onclick="scrollToExperience('brac-it')">
+              <div class="absolute inset-0 rounded-xl blur-lg opacity-20 group-hover:opacity-35 transition-opacity duration-500 bg-red-500">
+              </div>
+              <div class="relative bg-white/60 backdrop-blur-lg rounded-xl p-3 sm:p-4 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 hover:-translate-y-1">
+                <img 
+                  src="/logos/brac-it-logo.jpg" 
+                  alt="BRAC IT" 
+                  class="h-6 sm:h-8 md:h-9 w-auto object-contain transition-all duration-500"
+                  loading="lazy"
+                />
+              </div>
+              
+              <!-- Timeline Tooltip -->
+              <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50">
+                <div class="backdrop-blur-xl rounded-lg px-3 py-2 text-center shadow-xl border border-white/20 cursor-pointer bg-red-100/80" style="box-shadow: 0 4px 12px rgba(0,0,0,0.1), 0 0 0 1px rgba(255,255,255,0.1)">
+                  <div class="text-red-700 text-xs font-mono whitespace-nowrap font-semibold">
+                    Jul 2019 – Sep 2022
+                  </div>
+                </div>
+                <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-3 border-r-3 border-t-3 border-transparent border-t-red-100/80"></div>
+              </div>
+            </div>
+
+            <!-- Porsche Informatik -->
+            <div class="group relative cursor-pointer" onclick="scrollToExperience('porsche-informatik')">
+              <div class="absolute inset-0 rounded-xl blur-lg opacity-20 group-hover:opacity-35 transition-opacity duration-500 bg-gray-600">
+              </div>
+              <div class="relative bg-white/60 backdrop-blur-lg rounded-xl p-2 sm:p-3 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 hover:-translate-y-1">
+                <img 
+                  src="/logos/porsche_informatik_logo.jpg" 
+                  alt="Porsche Informatik" 
+                  class="h-8 sm:h-10 md:h-12 w-auto object-contain transition-all duration-500"
+                  loading="lazy"
+                />
+              </div>
+              
+              <!-- Timeline Tooltip -->
+              <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50">
+                <div class="backdrop-blur-xl rounded-lg px-3 py-2 text-center shadow-xl border border-white/20 cursor-pointer bg-gray-100/80" style="box-shadow: 0 4px 12px rgba(0,0,0,0.1), 0 0 0 1px rgba(255,255,255,0.1)">
+                  <div class="text-gray-700 text-xs font-mono whitespace-nowrap font-semibold">
+                    Oct 2025 – Present
+                  </div>
+                </div>
+                <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-3 border-r-3 border-t-3 border-transparent border-t-gray-100/80"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Elite Stats Dashboard -->
+          <div class="flex justify-center">
+            <div class="flex items-center gap-8 px-6 py-3 bg-white/10 backdrop-blur-2xl rounded-2xl border border-white/20 shadow-xl">
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-6 bg-gradient-to-t from-green-400 to-emerald-500 rounded-full"></div>
+                <span class="text-sm font-medium text-gray-700">3 Global Companies</span>
+              </div>
+              <div class="w-px h-4 bg-gray-300/50"></div>
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-6 bg-gradient-to-t from-blue-400 to-indigo-500 rounded-full"></div>
+                <span class="text-sm font-medium text-gray-700">4+ Years Excellence</span>
+              </div>
+              <div class="w-px h-4 bg-gray-300/50"></div>
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-6 rounded-full" style={`background: linear-gradient(to top, ${siteConfig.accentColor}80, ${siteConfig.accentColor})`}></div>
+                <span class="text-sm font-medium text-gray-700">Tech Leadership</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* No constellation animations needed for clean layout */
+  </style>
+</div>
+
+<script>
+  function scrollToExperience(companyId: string) {
+    if (companyId === 'porsche-informatik') {
+      // Scroll to achievements section for Porsche
+      document.getElementById('achievements')?.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+      return;
+    }
+
+    // Scroll to experience section for other companies
+    document.getElementById('experience')?.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+
+    // Wait for scroll to complete, then highlight the company
+    setTimeout(() => {
+      // Remove any existing highlights
+      document.querySelectorAll('.experience-highlight').forEach(el => {
+        el.classList.remove('experience-highlight');
+      });
+
+      // Find and highlight the specific company experience card
+      const experienceCards = document.querySelectorAll('#experience .bg-white');
+      const companyNames: Record<string, string> = {
+        'fraunhofer-iee': 'Fraunhofer IEE',
+        'greenable': 'Greenable GmbH',
+        'brac-it': 'Brac IT',
+        'porsche-informatik': 'Porsche Informatik'
+      };
+
+      experienceCards.forEach(card => {
+        const companyElement = card.querySelector('[style*="color:"]');
+        if (companyElement && companyElement.textContent?.trim() === companyNames[companyId]) {
+          card.classList.add('experience-highlight');
+          
+          // Scroll the specific card into view for better positioning
+          card.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'center'
+          });
+          
+          // Remove highlight after 3 seconds
+          setTimeout(() => {
+            card.classList.remove('experience-highlight');
+          }, 3000);
+        }
+      });
+    }, 800);
+  }
+
+  // Make function globally available
+  (window as any).scrollToExperience = scrollToExperience;
+</script>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 0.8s;
+  }
+
+  /* Global styles for experience highlighting */
+  :global(.experience-highlight) {
+    animation: highlightPulse 0.6s ease-in-out;
+    box-shadow: 0 0 0 3px var(--accent-color, #3b82f6), 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+  }
+
+  @keyframes highlightPulse {
+    0% { 
+      box-shadow: 0 0 0 0 var(--accent-color, #3b82f6), 0 4px 6px rgba(0, 0, 0, 0.1);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: 0 0 0 6px var(--accent-color, #3b82f6), 0 15px 30px rgba(0, 0, 0, 0.2);
+      transform: scale(1.03);
+    }
+    100% { 
+      box-shadow: 0 0 0 3px var(--accent-color, #3b82f6), 0 10px 25px rgba(0, 0, 0, 0.15);
+      transform: scale(1.02);
+    }
+  }
+</style>
