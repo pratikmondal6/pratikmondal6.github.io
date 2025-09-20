@@ -11,7 +11,7 @@ const achievementData = [
     category: "Innovation",
     color: "#619E7E", // Fraunhofer green
     bgColor: "from-green-50/40 to-emerald-50/30",
-    borderColor: "border-green-100",
+    borderColor: "border-green-100/60",
     shadowColor: "97, 158, 126"
   },
   {
@@ -20,7 +20,7 @@ const achievementData = [
     category: "Excellence", 
     color: "#619E7E", // Fraunhofer green (same organization)
     bgColor: "from-green-50/40 to-emerald-50/30",
-    borderColor: "border-green-100",
+    borderColor: "border-green-100/60",
     shadowColor: "97, 158, 126"
   },
   {
@@ -29,7 +29,7 @@ const achievementData = [
     category: "Leadership",
     color: "#094882", // Porsche blue
     bgColor: "from-blue-50/40 to-sky-50/30",
-    borderColor: "border-blue-100",
+    borderColor: "border-blue-100/60",
     shadowColor: "9, 72, 130"
   },
   {
@@ -38,7 +38,7 @@ const achievementData = [
     category: "Technical",
     color: "#0A2D59", // Brac IT navy (professional development context)
     bgColor: "from-slate-50/40 to-blue-50/30",
-    borderColor: "border-slate-100",
+    borderColor: "border-slate-100/60",
     shadowColor: "10, 45, 89"
   }
 ];
@@ -121,26 +121,25 @@ function highlightKeyWords(text: string, color: string): string {
           <div class="lg:col-span-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               {achievementData.map((achievement) => (
-                <div class="group relative">
-                  <div class={`relative bg-gradient-to-br ${achievement.bgColor} rounded-xl border ${achievement.borderColor} p-6 transition-all duration-300 group-hover:-translate-y-1 overflow-hidden`}
-                       style={`box-shadow: 0 2px 4px rgba(${achievement.shadowColor}, 0.08), 0 1px 2px rgba(${achievement.shadowColor}, 0.04)`}>
+                <div class="group relative h-full">
+                  <div class={`relative bg-gradient-to-br ${achievement.bgColor} rounded-xl border ${achievement.borderColor} p-6 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg overflow-hidden h-full flex flex-col`}
+                       style={`box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1); min-height: 160px;`}>
                     
                     <!-- Minimal header -->
-                    <div class="flex items-center gap-3 mb-4">
-                      <div class="w-8 h-8 rounded-lg bg-white border flex items-center justify-center shadow-sm"
-                           style={`border-color: rgba(${achievement.shadowColor}, 0.15)`}>
+                    <div class="flex items-center gap-3 mb-4 flex-shrink-0">
+                      <div class="w-8 h-8 rounded-lg bg-white border border-gray-200/80 flex items-center justify-center shadow-sm transition-all duration-300 group-hover:scale-110">
                         <span class="text-lg">{achievement.icon}</span>
                       </div>
                       <div>
                         <div class="text-xs font-medium text-gray-500 uppercase tracking-wide">
                           {achievement.category}
                         </div>
-                        <div class="w-6 h-0.5 rounded-full mt-1" style={`background-color: ${achievement.color}`}></div>
+                        <div class="w-6 h-0.5 rounded-full mt-1 transition-all duration-300 group-hover:w-8" style={`background-color: ${achievement.color}`}></div>
                       </div>
                     </div>
                     
                     <!-- Achievement content -->
-                    <div class="relative z-10">
+                    <div class="relative z-10 flex-grow flex items-start">
                       <p class="text-gray-700 text-sm sm:text-base leading-relaxed" 
                          set:html={highlightKeyWords(achievement.text, achievement.color)}>
                       </p>
