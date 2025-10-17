@@ -36,7 +36,7 @@ import { siteConfig } from "../config";
       stroke-width={0}></rect>
   </svg>
   <div class="h-full mx-auto p-8 sm:p-12 md:p-24 flex items-center">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full items-center">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full items-center py-20 lg:py-40">
       <!-- Left Section - Text Content -->
       <div class="space-y-6 sm:space-y-8 md:space-y-10">
         <h2
@@ -69,7 +69,7 @@ import { siteConfig } from "../config";
           
           <!-- Porsche Informatik - Bottom Center (Aligned with Fraunhofer) -->
           <div class="absolute floating-logo" style="top: 62%; left: 45%; animation-delay: 1.8s;">
-            <div class="group relative cursor-pointer" onclick="scrollToExperience('porsche-informatik')">
+            <div class="group relative cursor-pointer" role="button" tabindex="0" aria-label="Porsche Informatik" onclick="scrollToExperience('porsche-informatik')" onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); scrollToExperience('porsche-informatik'); }">
               <div class="absolute inset-0 rounded-3xl blur-lg opacity-20 group-hover:opacity-35 transition-opacity duration-500 bg-gray-600">
               </div>
               <div class="relative bg-white/70 backdrop-blur-lg rounded-3xl p-5 sm:p-6 md:p-7 border border-white/40 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-translate-y-2">
@@ -95,7 +95,7 @@ import { siteConfig } from "../config";
 
           <!-- Fraunhofer IEE - Upper Middle -->
           <div class="absolute floating-logo" style="top: 8%; left: 45%; animation-delay: 0s;">
-            <div class="group relative cursor-pointer" onclick="scrollToExperience('fraunhofer-iee')">
+            <div class="group relative cursor-pointer" role="button" tabindex="0" aria-label="Fraunhofer IEE" onclick="scrollToExperience('fraunhofer-iee')" onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); scrollToExperience('fraunhofer-iee'); }">
               <div class="absolute inset-0 rounded-3xl blur-lg opacity-25 group-hover:opacity-40 transition-opacity duration-500"
                    style="background-color: #619E7E">
               </div>
@@ -127,9 +127,9 @@ import { siteConfig } from "../config";
             </div>
           </div>
 
-          <!-- Greenable GmbH - Middle Right (Aligned with BRAC IT) -->
-          <div class="absolute floating-logo" style="top: 35%; right: 5%; animation-delay: 3.2s;">
-            <div class="group relative cursor-pointer" onclick="scrollToExperience('greenable')">
+          <!-- Greenable GmbH - Middle Right (swapped position with Hackathon) -->
+          <div class="absolute floating-logo" style="top: 6%; right: 8%; animation-delay: 1s;">
+            <div class="group relative cursor-pointer" role="button" tabindex="0" aria-label="Greenable GmbH" onclick="scrollToExperience('greenable')" onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); scrollToExperience('greenable'); }">
               <div class="absolute inset-0 rounded-3xl blur-lg opacity-20 group-hover:opacity-35 transition-opacity duration-500"
                    style="background-color: #56863F">
               </div>
@@ -158,7 +158,7 @@ import { siteConfig } from "../config";
 
           <!-- BRAC IT - Middle Left -->
           <div class="absolute floating-logo" style="top: 35%; left: 15%; animation-delay: 6.1s;">
-            <div class="group relative cursor-pointer" onclick="scrollToExperience('brac-it')">
+            <div class="group relative cursor-pointer" role="button" tabindex="0" aria-label="BRAC IT" onclick="scrollToExperience('brac-it')" onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); scrollToExperience('brac-it'); }">
               <div class="absolute inset-0 rounded-3xl blur-lg opacity-20 group-hover:opacity-35 transition-opacity duration-500"
                    style="background-color: #0A2D59">
               </div>
@@ -192,13 +192,45 @@ import { siteConfig } from "../config";
           <div class="absolute top-[25%] left-[65%] w-1.5 h-1.5 bg-orange-400/25 rounded-full floating-particle" style="animation-delay: 1.8s;"></div>
           <div class="absolute top-[45%] right-[25%] w-2 h-2 bg-pink-400/20 rounded-full floating-particle" style="animation-delay: 5.5s;"></div>
           <div class="absolute top-[18%] left-[20%] w-1 h-1 bg-cyan-400/30 rounded-full floating-particle" style="animation-delay: 3.2s;"></div>
+          
+          <!-- Hackathon Winner - Swapped to Greenable's former spot -->
+          <div class="absolute floating-logo" style="top: 42%; right: 10%; animation-delay: 3.2s;">
+            <div class="group relative" aria-label="Hackathon Winner">
+        <div class="absolute inset-0 rounded-3xl blur-lg opacity-20 group-hover:opacity-35 transition-opacity duration-500"
+          style={`background-color: ${siteConfig.accentColor}`}>
+              </div>
+              <div class="relative bg-white/70 backdrop-blur-lg rounded-3xl p-6 sm:p-7 md:p-8 border shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-translate-y-2 flex items-center justify-center"
+                   style={`border-color: ${siteConfig.accentColor}40; box-shadow: 0 10px 30px ${siteConfig.accentColor}1E, 0 6px 15px ${siteConfig.accentColor}0F`}>
+                <div class="h-18 sm:h-20 md:h-22 lg:h-24 xl:h-26 w-auto flex items-center justify-center">
+                  <div class="text-center">
+         <div class="hack-number text-4xl sm:text-5xl md:text-6xl font-extrabold leading-none tracking-tight bg-clip-text text-transparent drop-shadow transform transition-all duration-300"
+           style={`background-image: linear-gradient(90deg, ${siteConfig.accentColor}, #7c3aed); text-shadow: 0 6px 18px ${siteConfig.accentColor}33; filter: drop-shadow(0 6px 18px ${siteConfig.accentColor}44);`}>2</div>
+                    <div class="hack-sub mt-1">
+                      <div class="text-lg sm:text-xl font-semibold tracking-wide text-gray-800">Hackathon</div>
+          <div class="winner-text text-sm sm:text-base mt-0 font-semibold bg-clip-text text-transparent">Winner</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Hover Tooltip -->
+                <div class="absolute -top-20 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-lg text-gray-800 px-4 py-3 rounded-xl text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap z-60 border shadow-lg"
+                     style={`border-color: ${siteConfig.accentColor}40; box-shadow: 0 8px 25px ${siteConfig.accentColor}14;`}>
+                  <div class="text-center">
+                    <div class="font-semibold" style={`color: ${siteConfig.accentColor};`}>Smart Farming Hackathon</div>
+                    <div class="text-xs text-gray-600">Winner — 2024 & 2025</div>
+                  </div>
+                  <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Mobile/Tablet: Grid Layout -->
         <div class="lg:hidden grid grid-cols-2 gap-10 p-8 h-full items-center justify-items-center">
           <!-- Fraunhofer IEE -->
           <div class="floating-logo mobile-logo" style="animation-delay: 0s;">
-            <div class="group relative cursor-pointer" onclick="scrollToExperience('fraunhofer-iee')">
+            <div class="group relative cursor-pointer" role="button" tabindex="0" aria-label="Fraunhofer IEE" onclick="scrollToExperience('fraunhofer-iee')" onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); scrollToExperience('fraunhofer-iee'); }">
               <div class="absolute inset-0 rounded-3xl blur-lg opacity-25 group-hover:opacity-40 transition-opacity duration-500"
                    style="background-color: #619E7E">
               </div>
@@ -221,7 +253,7 @@ import { siteConfig } from "../config";
 
           <!-- Greenable GmbH -->
           <div class="floating-logo mobile-logo" style="animation-delay: 0.7s;">
-            <div class="group relative cursor-pointer" onclick="scrollToExperience('greenable')">
+            <div class="group relative cursor-pointer" role="button" tabindex="0" aria-label="Greenable GmbH" onclick="scrollToExperience('greenable')" onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); scrollToExperience('greenable'); }">
               <div class="absolute inset-0 rounded-3xl blur-lg opacity-20 group-hover:opacity-35 transition-opacity duration-500"
                    style="background-color: #56863F">
               </div>
@@ -239,7 +271,7 @@ import { siteConfig } from "../config";
 
           <!-- BRAC IT -->
           <div class="floating-logo mobile-logo" style="animation-delay: 1.4s;">
-            <div class="group relative cursor-pointer" onclick="scrollToExperience('brac-it')">
+            <div class="group relative cursor-pointer" role="button" tabindex="0" aria-label="BRAC IT" onclick="scrollToExperience('brac-it')" onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); scrollToExperience('brac-it'); }">
               <div class="absolute inset-0 rounded-3xl blur-lg opacity-20 group-hover:opacity-35 transition-opacity duration-500"
                    style="background-color: #0A2D59">
               </div>
@@ -257,7 +289,7 @@ import { siteConfig } from "../config";
 
           <!-- Porsche Informatik -->
           <div class="floating-logo mobile-logo" style="animation-delay: 2.1s;">
-            <div class="group relative cursor-pointer" onclick="scrollToExperience('porsche-informatik')">
+            <div class="group relative cursor-pointer" role="button" tabindex="0" aria-label="Porsche Informatik" onclick="scrollToExperience('porsche-informatik')" onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); scrollToExperience('porsche-informatik'); }">
               <div class="absolute inset-0 rounded-3xl blur-lg opacity-20 group-hover:opacity-35 transition-opacity duration-500 bg-gray-600">
               </div>
               <div class="relative bg-white/70 backdrop-blur-lg rounded-3xl p-5 border border-white/40 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-translate-y-2">
@@ -267,6 +299,38 @@ import { siteConfig } from "../config";
                   class="h-16 sm:h-18 w-auto object-contain transition-all duration-500"
                   loading="lazy"
                 />
+              </div>
+            </div>
+          </div>
+
+          <!-- Hackathon Winner (Mobile) -->
+          <div class="floating-logo mobile-logo col-span-2 flex justify-center" style="animation-delay: 2.8s;">
+            <div class="group relative" aria-label="Hackathon Winner">
+        <div class="absolute inset-0 rounded-3xl blur-lg opacity-20 group-hover:opacity-35 transition-opacity duration-500"
+          style={`background-color: ${siteConfig.accentColor}`}>
+              </div>
+              <div class="relative bg-white/70 backdrop-blur-lg rounded-3xl p-6 border shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-translate-y-2 flex items-center justify-center"
+                   style={`border-color: ${siteConfig.accentColor}40; box-shadow: 0 10px 30px ${siteConfig.accentColor}1E, 0 6px 15px ${siteConfig.accentColor}0F`}>
+                <div class="h-16 sm:h-18 w-auto flex items-center justify-center">
+                  <div class="text-center">
+        <div class="hack-number text-2xl sm:text-3xl font-extrabold leading-none tracking-tight bg-clip-text text-transparent drop-shadow transform transition-all duration-300"
+          style={`background-image: linear-gradient(90deg, ${siteConfig.accentColor}, #7c3aed); text-shadow: 0 4px 12px ${siteConfig.accentColor}2a; filter: drop-shadow(0 4px 12px ${siteConfig.accentColor}33);`}>2</div>
+                    <div class="hack-sub mt-1">
+                      <div class="text-base sm:text-lg font-semibold tracking-wide text-gray-800">Hackathon</div>
+          <div class="winner-text text-sm text-gray-600 mt-0 font-semibold bg-clip-text text-transparent">Winner</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Hover Tooltip (mobile) -->
+                <div class="absolute -top-20 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-lg text-gray-800 px-4 py-3 rounded-xl text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap z-60 border shadow-lg"
+                     style={`border-color: ${siteConfig.accentColor}40; box-shadow: 0 8px 25px ${siteConfig.accentColor}14;`}>
+                  <div class="text-center">
+                    <div class="font-semibold" style={`color: ${siteConfig.accentColor};`}>Smart Farming Hackathon</div>
+                    <div class="text-xs text-gray-600">Winner — 2024 & 2025</div>
+                  </div>
+                  <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -441,10 +505,35 @@ import { siteConfig } from "../config";
     }
 
     /* Mobile responsive styling */
-    .mobile-logo:nth-child(1) { animation: floatConstrainedA 10s ease-in-out infinite; animation-delay: 0s; }
-    .mobile-logo:nth-child(2) { animation: floatConstrainedB 12s ease-in-out infinite; animation-delay: 0.7s; }
-    .mobile-logo:nth-child(3) { animation: floatConstrainedC 8s ease-in-out infinite; animation-delay: 1.4s; }
-    .mobile-logo:nth-child(4) { animation: floatConstrainedD 11s ease-in-out infinite; animation-delay: 2.1s; }
+  .mobile-logo:nth-child(1) { animation: flyingLogoA 8s ease-in-out infinite; animation-delay: 0s; }
+  .mobile-logo:nth-child(2) { animation: flyingLogoB 10s ease-in-out infinite; animation-delay: 0.7s; }
+  .mobile-logo:nth-child(3) { animation: flyingLogoC 7s ease-in-out infinite; animation-delay: 1.4s; }
+  .mobile-logo:nth-child(4) { animation: flyingLogoD 12s ease-in-out infinite; animation-delay: 2.1s; }
+
+    /* Constrained mobile float animations (subtle movement) */
+    @keyframes floatConstrainedA {
+      0% { transform: translateY(0px) translateX(0px) scale(1); opacity: 1; }
+      50% { transform: translateY(-6px) translateX(4px) scale(0.98); opacity: 0.95; }
+      100% { transform: translateY(0px) translateX(0px) scale(1); opacity: 1; }
+    }
+
+    @keyframes floatConstrainedB {
+      0% { transform: translateY(0px) translateX(0px) scale(1); opacity: 1; }
+      50% { transform: translateY(-8px) translateX(-4px) scale(0.99); opacity: 0.93; }
+      100% { transform: translateY(0px) translateX(0px) scale(1); opacity: 1; }
+    }
+
+    @keyframes floatConstrainedC {
+      0% { transform: translateY(0px) translateX(0px) scale(1); opacity: 1; }
+      50% { transform: translateY(-5px) translateX(6px) scale(0.985); opacity: 0.96; }
+      100% { transform: translateY(0px) translateX(0px) scale(1); opacity: 1; }
+    }
+
+    @keyframes floatConstrainedD {
+      0% { transform: translateY(0px) translateX(0px) scale(1); opacity: 1; }
+      50% { transform: translateY(-7px) translateX(-6px) scale(0.98); opacity: 0.94; }
+      100% { transform: translateY(0px) translateX(0px) scale(1); opacity: 1; }
+    }
   </style>
 </div>
 
@@ -563,6 +652,76 @@ import { siteConfig } from "../config";
 
   .animation-delay-800 {
     animation-delay: 0.8s;
+  }
+
+  /* Hackathon emphasis styles */
+  .hack-number {
+    will-change: transform, filter;
+    animation: floatSlow 6s ease-in-out infinite;
+  }
+
+  .hack-number:hover, .hack-number:focus {
+    transform: translateY(-6px) scale(1.03);
+    filter: drop-shadow(0 12px 36px rgba(124, 58, 237, 0.25));
+  }
+
+  .hack-sub {
+    letter-spacing: 0.14em;
+    opacity: 0.95;
+    transition: transform 200ms ease, opacity 200ms ease;
+  }
+
+  .group:focus-within .hack-sub, .group:hover .hack-sub {
+    transform: translateY(-2px);
+    opacity: 1;
+  }
+
+  @keyframes floatSlow {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+  }
+
+  /* Winner shimmer and emphasis */
+  .winner-text {
+    transition: transform 220ms ease, filter 220ms ease, background-position 1200ms linear;
+    background-position: 0% 0%;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.06));
+  }
+
+  /* Winner gradient using site accent color and a complementary teal for shimmer */
+  .winner-text {
+    /* Blue -> Green gradient: use site accent color as the blue and a vibrant green stop */
+    background-image: linear-gradient(90deg, var(--accent-color, #1e40af), #10b981);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* ensure text uses background-clip */
+  }
+
+  /* Animate the gradient left-to-right for a flowing effect */
+  @keyframes winnerShimmer {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 0%; }
+  }
+
+  .winner-text {
+    animation: winnerShimmer 2.8s linear infinite;
+    /* keep existing hover transform + shimmer behavior on hover */
+  }
+
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .winner-text {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+
+  .group:hover .winner-text, .group:focus-within .winner-text {
+    transform: translateY(-3px) scale(1.03);
+    background-position: 100% 0%;
+    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.08));
   }
 
   /* Global styles for experience highlighting */
