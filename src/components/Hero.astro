@@ -93,8 +93,8 @@ import { siteConfig } from "../config";
             </div>
           </div>
 
-          <!-- Fraunhofer IEE - Upper Middle -->
-          <div class="absolute floating-logo" style="top: 8%; left: 45%; animation-delay: 0s;">
+          <!-- Fraunhofer IEE - Upper Middle (swapped with BRAC IT) -->
+          <div class="absolute floating-logo" style="top: 35%; left: 15%; animation-delay: 6.1s;">
             <div class="group relative cursor-pointer" role="button" tabindex="0" aria-label="Fraunhofer IEE" onclick="scrollToExperience('fraunhofer-iee')" onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); scrollToExperience('fraunhofer-iee'); }">
               <div class="absolute inset-0 rounded-3xl blur-lg opacity-25 group-hover:opacity-40 transition-opacity duration-500"
                    style="background-color: #619E7E">
@@ -128,7 +128,7 @@ import { siteConfig } from "../config";
           </div>
 
           <!-- Greenable GmbH - Middle Right (swapped position with Hackathon) -->
-          <div class="absolute floating-logo" style="top: 8%; right: 4%; animation-delay: 1s;">
+          <div class="absolute floating-logo" style="top: 18%; right: 4%; animation-delay: 1s;">
             <div class="group relative cursor-pointer" role="button" tabindex="0" aria-label="Greenable GmbH" onclick="scrollToExperience('greenable')" onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); scrollToExperience('greenable'); }">
               <div class="absolute inset-0 rounded-3xl blur-lg opacity-20 group-hover:opacity-35 transition-opacity duration-500"
                    style="background-color: #56863F">
@@ -156,8 +156,8 @@ import { siteConfig } from "../config";
             </div>
           </div>
 
-          <!-- BRAC IT - Middle Left -->
-          <div class="absolute floating-logo" style="top: 35%; left: 15%; animation-delay: 6.1s;">
+          <!-- BRAC IT - Middle Left (swapped with Fraunhofer) -->
+          <div class="absolute floating-logo" style="top: 8%; left: 45%; animation-delay: 0s;">
             <div class="group relative cursor-pointer" role="button" tabindex="0" aria-label="BRAC IT" onclick="scrollToExperience('brac-it')" onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); scrollToExperience('brac-it'); }">
               <div class="absolute inset-0 rounded-3xl blur-lg opacity-20 group-hover:opacity-35 transition-opacity duration-500"
                    style="background-color: #0A2D59">
@@ -195,7 +195,7 @@ import { siteConfig } from "../config";
           
           <!-- Hackathon Winner - Swapped to Greenable's former spot -->
           <div class="absolute floating-logo" style="top: 42%; right: 10%; animation-delay: 3.2s;">
-            <div class="group relative" aria-label="Hackathon Winner">
+            <div class="group relative cursor-pointer" role="button" tabindex="0" aria-label="Hackathon Winner" onclick="document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' })" onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }">
         <div class="absolute inset-0 rounded-3xl blur-lg opacity-20 group-hover:opacity-35 transition-opacity duration-500"
           style={`background-color: ${siteConfig.accentColor}`}>
               </div>
@@ -305,7 +305,7 @@ import { siteConfig } from "../config";
 
           <!-- Hackathon Winner (Mobile) -->
           <div class="floating-logo mobile-logo col-span-2 flex justify-center" style="animation-delay: 2.8s;">
-            <div class="group relative" aria-label="Hackathon Winner">
+            <div class="group relative cursor-pointer" role="button" tabindex="0" aria-label="Hackathon Winner" onclick="document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' })" onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }">
         <div class="absolute inset-0 rounded-3xl blur-lg opacity-20 group-hover:opacity-35 transition-opacity duration-500"
           style={`background-color: ${siteConfig.accentColor}`}>
               </div>
@@ -674,6 +674,14 @@ import { siteConfig } from "../config";
   .group:focus-within .hack-sub, .group:hover .hack-sub {
     transform: translateY(-2px);
     opacity: 1;
+  }
+
+  /* Replace the browser's default blue focus rectangle with a subtle, branded focus ring */
+  .group:focus { outline: none; }
+  .group:focus-visible {
+    outline: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08), 0 0 0 4px var(--accent-color, #7c3aed);
+    border-radius: 1rem; /* match card rounding */
   }
 
   @keyframes floatSlow {
