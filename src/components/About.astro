@@ -4,7 +4,7 @@ import { siteConfig } from "../config";
 // Extract key highlights from the about text
 const highlights = [
   { icon: "🏆", text: "2 Hackathon Victories", subtext: "Smart Farming Competitions" },
-  { icon: "⚡", text: "4+ Years Experience", subtext: "Java & DevOps Engineering" }
+  { icon: "⚡", text: "5+ Years Experience", subtext: "Java & DevOps Engineering" }
 ];
 ---
 
@@ -54,8 +54,7 @@ const highlights = [
             <!-- Quote decoration -->
             <div class="absolute top-6 left-6 text-5xl text-blue-200/40 font-serif leading-none">"</div>
             
-            <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-700 relative z-10 pl-12 pr-12 font-medium">
-              {siteConfig.aboutMe}
+            <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-700 relative z-10 pl-12 pr-12 font-medium" set:html={siteConfig.aboutMe}>
             </p>
             
             <!-- Bottom decoration -->

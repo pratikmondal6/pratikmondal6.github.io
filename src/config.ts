@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Pratik Mondal",
   title: "Java & DevOps Engineer",
   description:
-    "Portfolio website of Pratik Mondal, showcasing 4+ years of experience in building enterprise applications and automating deployments with a focus on Java, Spring Boot, CI/CD, and DevOps practices.",
+    "Portfolio website of Pratik Mondal, showcasing 5+ years of experience in building enterprise applications and automating deployments with a focus on Java, Spring Boot, CI/CD, and DevOps practices.",
   accentColor: "#1d4ed8", // You can change this to match your branding
   social: {
     email: "pratikmondal6@hotmail.com",
@@ -10,7 +10,7 @@ export const siteConfig = {
     github: "https://github.com/pratikmondal6",
   },
   aboutMe:
-    "Real-world challenge solver who turns complex problems into winning solutions, demonstrated by 2 Smart Farming Hackathon victories organized by Fraunhofer IESE. Java & DevOps Engineer with 4+ years building production systems using Spring Boot, GitLab CI/CD, and Docker. I've scaled applications to 100K+ users and automated pipelines that cut deployment time by 10%. Currently advancing research work while completing my Master's degree.",
+    "Java & DevOps Engineer with <strong>5+ years of experience</strong> building and operating scalable production systems using <strong>Spring Boot, Docker, and GitLab CI/CD</strong>. Delivered systems serving <strong>100K+ users</strong> and improved deployment efficiency by <strong>10%</strong> through CI/CD automation and pipeline optimization. Experience includes research engineering at <strong>Fraunhofer IEE</strong>, winning <strong>2 Smart Farming Hackathons</strong> organized by <strong>Fraunhofer IESE</strong>, and leading a team project with <strong>Porsche Informatik</strong>.",
   skills: [
     "Java", "Spring Boot", "GitLab CI/CD", "Jenkins", "Docker", "Kubernetes", 
     "Python", "JavaScript", "TypeScript", "ReactJS", "Angular", "MongoDB", 
