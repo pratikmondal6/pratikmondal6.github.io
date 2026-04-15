@@ -86,7 +86,7 @@ export const siteConfig = {
   experience: [
     {
       company: "Fraunhofer IEE",
-      title: "Research Assistant – Full-Stack Software Engineer",
+      title: "Research Assistant – Java & DevOps Engineer",
       dateRange: "Jul 2024 – Present",
       logo: "/logos/fraunhofer-iee-logo.jpg",
       bullets: [
