@@ -10,7 +10,7 @@ export const siteConfig = {
     github: "https://github.com/pratikmondal6",
   },
   aboutMe:
-    "Full-Stack Software Engineer with <strong>5+ years of experience</strong> building and operating scalable production systems using <strong>Spring Boot, Docker, and GitLab CI/CD</strong>. Delivered systems serving <strong>100K+ users</strong> and improved deployment efficiency by <strong>10%</strong> through CI/CD automation and pipeline optimization. Experience includes research engineering at <strong>Fraunhofer IEE</strong>, winning <strong>2 Smart Farming Hackathons</strong> organized by <strong>Fraunhofer IESE</strong>, and leading a team project with <strong>Porsche Informatik</strong>.",
+    `<p>I’m a <strong>Software Engineer</strong> with <strong>5+ years of professional experience</strong>, including nearly <strong>3 years in Germany</strong>, focused on <strong>backend engineering and DevOps</strong>. At the <strong>Fraunhofer-Gesellschaft</strong>, I work with <strong>Java, Spring Boot, Docker, Kubernetes, CI/CD, Linux, and distributed systems</strong>, while also contributing to applied research in autonomous driving using <strong>Python and C++</strong>.</p><p class="mt-6">I also served as <strong>Project Manager</strong> on a <strong>Porsche Informatik GmbH</strong> capstone project and earned awards at <strong>two hackathons</strong>, including a <strong>first-place finish in 2025</strong>.</p>`,
   skills: [
     "Java", "Spring Boot", "GitLab CI/CD", "Jenkins", "Docker", "Kubernetes", 
     "Python", "JavaScript", "TypeScript", "ReactJS", "Angular", "MongoDB", 
@@ -85,9 +85,21 @@ export const siteConfig = {
   ],
   experience: [
     {
+      company: "Fraunhofer IESE",
+      title: "Student Assistant – Predictive Autonomy Lab (PAL)",
+      dateRange: "Jul 2026 – Present",
+      logo: "/logos/fraunhofer-iee-logo.jpg",
+      bullets: [
+        "Traced real-time vehicle signals from the dynamics model to the digital instrument cluster for HMI debugging and validation.",
+        "Developed Qt/QML-based HMI displays for real-time vehicle data visualization across multiple automotive display units.",
+        "Integrated and validated HMI components through configuration debugging, signal mapping, and simulator/lab testing.",
+        "Developed driving simulation scenarios and supporting software in Python and C++ for autonomous-driving research.",
+      ],
+    },
+    {
       company: "Fraunhofer IEE",
       title: "Research Assistant – Java & DevOps Engineer",
-      dateRange: "Jul 2024 – Present",
+      dateRange: "Jul 2024 – Apr 2026",
       logo: "/logos/fraunhofer-iee-logo.jpg",
       bullets: [
         "Migrated Jenkins pipelines to GitLab CI/CD, reducing build/release time by 10%.",
