@@ -4,7 +4,20 @@ import { siteConfig } from "../config";
 // Extract key highlights from the about text
 const highlights = [
   { icon: "🏆", text: "2 Hackathon Awards", subtext: "Including 1st Place in 2025" },
-  { icon: "⚡", text: "5+ Years Experience", subtext: "Java & DevOps Engineering" }
+  { icon: "⚡", text: "5+ Years Experience", subtext: "More than 3 years in Germany · Java & DevOps Engineering" }
+];
+
+const story = [
+  {
+    label: "Now",
+    text: "I’m a Software Engineer with 5+ years of professional experience, including more than 3 years in Germany, focused on backend engineering and DevOps. My work centers on Java, Spring Boot, Docker, Kubernetes, CI/CD, Linux, and distributed systems.",
+    emphasis: ["Software Engineer", "5+ years of professional experience", "more than 3 years in Germany", "backend engineering", "DevOps", "Java", "Spring Boot", "Docker", "Kubernetes", "CI/CD", "distributed systems"]
+  },
+  {
+    label: "Beyond the code",
+    text: "I also served as Project Manager on a Porsche Informatik GmbH capstone project and earned awards at two hackathons, including a first-place finish in 2025.",
+    emphasis: ["Project Manager", "Porsche Informatik GmbH", "two hackathons", "first-place finish in 2025"]
+  }
 ];
 ---
 
@@ -47,24 +60,74 @@ const highlights = [
       </div>
 
       <div class="lg:col-span-8 flex items-center min-h-[400px]">
-        <!-- Main about content with enhanced styling -->
+        <!-- Guided story: progressive, skimmable, and accessible -->
         <div class="relative w-full">
           <div class="absolute inset-0 bg-gradient-to-r from-blue-50/50 to-purple-50/50 rounded-3xl blur-xl"></div>
-          <div class="relative bg-white rounded-3xl border border-gray-200/60 p-8 sm:p-10 md:p-12 shadow-2xl shadow-gray-500/10 hover:shadow-3xl hover:shadow-gray-500/15 hover:-translate-y-2 hover:scale-[1.02] transition-all duration-700 backdrop-blur-sm group">
-            <!-- Quote decoration -->
-            <div class="absolute top-6 left-6 text-5xl text-blue-200/40 font-serif leading-none">"</div>
-            
-            <div class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-700 relative z-10 pl-12 pr-12 font-medium" set:html={siteConfig.aboutMe}>
+          <div class="story-card relative bg-white rounded-3xl border border-gray-200/60 p-7 sm:p-9 md:p-11 shadow-2xl shadow-gray-500/10">
+            <div class="relative z-10">
+              <div class="flex items-center justify-between gap-4 mb-8">
+                <p class="text-xs uppercase tracking-[0.2em] text-gray-500">About my work</p>
+              </div>
+              <div id="about-story" class="story-content space-y-7 text-lg sm:text-xl leading-relaxed text-gray-700 font-medium" aria-live="polite">
+                {story.map((item, index) => (
+                  <article class="story-step" data-step={index}>
+                    <p class="mb-2 text-sm font-semibold tracking-wide text-blue-700">{item.label}</p>
+                    <p class="story-text" data-text={item.text} data-emphasis={item.emphasis.join("|")}>{item.text}</p>
+                  </article>
+                ))}
+              </div>
+              <div class="mt-9 flex items-center gap-4">
+                <div class="story-progress flex gap-2" aria-hidden="true">
+                  {story.map((_, index) => <span class="story-dot" data-dot={index}></span>)}
+                </div>
+                <p id="story-status" class="text-sm text-gray-500">What I do and what I care about.</p>
+              </div>
             </div>
-            
-            <!-- Bottom decoration -->
-            <div class="absolute bottom-6 right-6 text-5xl text-blue-200/40 font-serif rotate-180 leading-none">"</div>
-            
-            <!-- Subtle glow effect -->
-            <div class="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/5 to-purple-500/5 opacity-100 hover:opacity-75 transition-opacity duration-700"></div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  const storyRoot = document.querySelector('#about-story');
+  if (storyRoot) {
+    const steps = [...storyRoot.querySelectorAll('.story-step')];
+    const dots = [...document.querySelectorAll('.story-dot')];
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let timer;
+    let running = true;
+    const finish = () => {
+      clearTimeout(timer); running = false;
+      steps.forEach((step) => step.classList.add('is-visible'));
+      dots.forEach((dot) => dot.classList.add('is-active'));
+    };
+    const reveal = (stepIndex = 0, wordIndex = 0) => {
+      if (!running || stepIndex >= steps.length) return finish();
+      const text = steps[stepIndex].querySelector('.story-text');
+      const allWords = words(text.dataset.text);
+      const visible = allWords.slice(0, wordIndex + 1).join(' ');
+      text.innerHTML = visible;
+      (text.dataset.emphasis || '').split('|').filter(Boolean).forEach((phrase) => {
+        text.innerHTML = text.innerHTML.replace(phrase, `<strong>${phrase}</strong>`);
+      });
+      steps[stepIndex].classList.add('is-visible'); dots[stepIndex].classList.add('is-active');
+      if (wordIndex + 1 < allWords.length) timer = setTimeout(() => reveal(stepIndex, wordIndex + 1), reduceMotion ? 0 : 72);
+      else timer = setTimeout(() => reveal(stepIndex + 1, 0), reduceMotion ? 0 : 700);
+    };
+    const observer = new IntersectionObserver((entries) => { if (entries.some((entry) => entry.isIntersecting)) { observer.disconnect(); if (reduceMotion) finish(); else reveal(); } }, { threshold: 0.25 });
+    observer.observe(storyRoot);
+  }
+</script>
+
+<style>
+  .story-step { opacity: 1; transition: opacity 300ms ease; }
+  .story-step.is-visible { opacity: 1; }
+  .story-text strong { font-weight: 700; color: #111827; }
+  .story-text span { animation: wordIn 260ms ease both; }
+  .story-dot { width: 0.5rem; height: 0.5rem; border-radius: 999px; background: #d1d5db; transition: all 300ms ease; }
+  .story-dot.is-active { width: 1.5rem; background: var(--accent-color, #1d4ed8); }
+  @keyframes wordIn { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: translateY(0); } }
+  @media (prefers-reduced-motion: reduce) { .story-step, .story-dot, .story-text span { transition: none; animation: none; } }
+</style>
