@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Pratik Mondal",
-  title: "Full-Stack Software Engineer",
+  title: "Java & DevOps Engineer",
   description:
     "Portfolio website of Pratik Mondal, showcasing 5+ years of experience in building enterprise applications and automating deployments with a focus on Java, Spring Boot, CI/CD, and DevOps practices.",
   accentColor: "#1d4ed8", // You can change this to match your branding
@@ -10,41 +10,39 @@ export const siteConfig = {
     github: "https://github.com/pratikmondal6",
   },
   aboutMe:
-    `<p>I’m a <strong>Software Engineer</strong> with <strong>5+ years of professional experience</strong>, including nearly <strong>3 years in Germany</strong>, focused on <strong>backend engineering and DevOps</strong>. My work centers on <strong>Java, Spring Boot, Docker, Kubernetes, CI/CD, Linux, and distributed systems</strong>.</p><p class="mt-6">I also served as <strong>Project Manager</strong> on a <strong>Porsche Informatik GmbH</strong> capstone project and earned awards at <strong>two hackathons</strong>, including a <strong>first-place finish in 2025</strong>.</p>`,
+    `<p>I’m a <strong>Software Engineer</strong> with <strong>5+ years of professional experience</strong>, focused on <strong>Java backend development and DevOps</strong>. I work mainly with <strong>Java, Spring Boot, microservices, Docker, Kubernetes, CI/CD, Linux, and distributed systems</strong>.</p>`,
   skills: [
-    "Java", "Spring Boot", "GitLab CI/CD", "Jenkins", "Docker", "Kubernetes", 
-    "Python", "JavaScript", "TypeScript", "ReactJS", "Angular", "MongoDB", 
-    "PostgreSQL", "REST API", "Microservices", "AWS S3", "MinIO"
+    "Java", "Spring Boot", "Microservices", "DevOps", "CI/CD", "Docker", "Kubernetes",
+    "REST APIs", "GitLab CI/CD", "Jenkins", "Spring Security", "PostgreSQL", "MongoDB",
+    "Apache Kafka", "Spring Cloud", "Event-Driven Architecture", "API Gateways", "Git", "Linux", "Maven"
   ],
   skillsAndExpertise: {
     programmingLanguages: [
-      "Java", "Python", "JavaScript", "TypeScript", "C++", "Groovy",
+      "Java", "Python", "C++", "TypeScript", "JavaScript", "Groovy",
     ],
     frameworks: [
-      "Spring Boot", "ReactJS", "Angular", "Grails", "Junit", "Mockito",
+      "Spring Boot", "Spring Cloud", "Spring Security", "Spring Batch", "JPA", "Hibernate", "JDBC", "Grails",
     ],
     backendAPIs: [
-      "Microservices", "REST API", "Spring Security", "Spring Batch", "Hibernate",
-      "JPA", "JBoss", "JDBC", "Servlets", "Tomcat",
+      "Microservices", "REST APIs", "Event-Driven Architecture", "API Gateways", "Apache Kafka", "RabbitMQ",
     ],
     devOps: [
-      "GitLab CI/CD", "Jenkins", "Docker", "Harbor", "ArgoCD", "Rancher",
-      "SonarQube", "AWS S3", "MinIO", "RabbitMQ", "Kubernetes",
+      "Docker", "Kubernetes", "GitLab CI/CD", "Jenkins", "Argo CD", "Rancher", "Harbor", "SonarQube", "Microsoft Azure", "AWS S3", "MinIO", "Linux",
     ],
     databases: [
-      "MySQL", "PostgreSQL", "MongoDB", "Firebase",
+      "PostgreSQL", "MongoDB", "MySQL", "Neo4j", "Firebase",
     ],
     frontend: [
-      "Bootstrap 5", "CSS3", "HTML5",
+      "React", "Angular", "Qt/QML", "Bootstrap 5", "HTML5", "CSS3",
     ],
     tools: [
-      "Git", "GitHub", "Jira", "Maven", "Gradle", "Postman", "Linux", "Matlab",
+      "Git", "GitHub", "Maven", "Gradle", "Postman", "JUnit", "Mockito",
     ],
     machineLearning: [
-      "NumPy", "scikit-learn", "Jupyter Notebook",
+      "LLM", "Machine Learning", "NumPy", "scikit-learn", "Jupyter Notebook", "Data Analysis", "Neo4j",
     ],
     methodologies: [
-      "Agile (Scrum, Kanban)", "OOP", "SDLC", "Data Structures & Algorithms",
+      "Agile", "Scrum", "Kanban", "SDLC", "OOP", "Jira", "Project Management",
     ]
   },
   achievements: [
@@ -64,9 +62,9 @@ export const siteConfig = {
     {
       name: "Farmbot – Digital Agriculture",
       description:
-        "Developed an AI-powered IoT system with Node.js + ReactJS for automated seeding, irrigation, and soil monitoring.",
+        "Developed an IoT system with Node.js and React for automated seeding, irrigation, and soil monitoring.",
       link: "https://github.com/pratikmondal6/Farmbot-Digital-Agriculture",
-      skills: ["Node.js", "ReactJS", "IoT"],
+      skills: ["Node.js", "React", "IoT"],
     },
     {
       name: "Shongjog – Emergency Service Mapping Platform",
@@ -108,7 +106,7 @@ export const siteConfig = {
     },
     {
       company: "Greenable GmbH",
-      title: "Full-Stack Software Engineer",
+      title: "Software Engineer – Full-Stack",
       dateRange: "Oct 2023 – Apr 2024",
       logo: "/logos/greenable-logo.jpg",
       bullets: [

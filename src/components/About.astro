@@ -3,20 +3,18 @@ import { siteConfig } from "../config";
 
 // Extract key highlights from the about text
 const highlights = [
-  { icon: "🏆", text: "2 Hackathon Awards", subtext: "Including 1st Place in 2025" },
-  { icon: "⚡", text: "5+ Years Experience", subtext: "More than 3 years in Germany · Java & DevOps Engineering" }
+  { icon: "⚡", text: "5+ Years Experience", subtext: "More than 3 years in Germany" },
+  { icon: "🏆", text: "2 Hackathon Awards", subtext: "Including 2nd Place in 2025" }
 ];
 
 const story = [
   {
-    label: "Now",
-    text: "I’m a Software Engineer with 5+ years of professional experience, including more than 3 years in Germany, focused on backend engineering and DevOps. My work centers on Java, Spring Boot, Docker, Kubernetes, CI/CD, Linux, and distributed systems.",
-    emphasis: ["Software Engineer", "5+ years of professional experience", "more than 3 years in Germany", "backend engineering", "DevOps", "Java", "Spring Boot", "Docker", "Kubernetes", "CI/CD", "distributed systems"]
+    text: "I'm a Software Engineer with 5+ years of professional experience, focused on Java backend development and DevOps. I work mainly with Java, Spring Boot, microservices, Docker, Kubernetes, CI/CD, Linux, and distributed systems.",
+    emphasis: ["Software Engineer", "5+ years of professional experience", "Java backend development", "DevOps", "Java", "Spring Boot", "microservices", "Docker", "Kubernetes", "CI/CD", "Linux", "distributed systems"]
   },
   {
-    label: "Beyond the code",
-    text: "I also served as Project Manager on a Porsche Informatik GmbH capstone project and earned awards at two hackathons, including a first-place finish in 2025.",
-    emphasis: ["Project Manager", "Porsche Informatik GmbH", "two hackathons", "first-place finish in 2025"]
+    text: "My experience spans enterprise software and production systems, with additional work in automotive software and simulation. I also served as Project Manager on a Porsche Informatik capstone collaboration. My main interests are backend engineering, DevOps, distributed systems, and reliable production software.",
+    emphasis: ["enterprise software", "production systems", "automotive software", "simulation", "Project Manager", "Porsche Informatik capstone collaboration", "backend engineering", "DevOps", "distributed systems", "reliable production software"]
   }
 ];
 ---
@@ -71,7 +69,6 @@ const story = [
               <div id="about-story" class="story-content space-y-7 text-lg sm:text-xl leading-relaxed text-gray-700 font-medium" aria-live="polite">
                 {story.map((item, index) => (
                   <article class="story-step" data-step={index}>
-                    <p class="mb-2 text-sm font-semibold tracking-wide text-blue-700">{item.label}</p>
                     <p class="story-text" data-text={item.text} data-emphasis={item.emphasis.join("|")}>{item.text}</p>
                   </article>
                 ))}
@@ -124,7 +121,7 @@ const story = [
 <style>
   .story-step { opacity: 1; transition: opacity 300ms ease; }
   .story-step.is-visible { opacity: 1; }
-  .story-text strong { font-weight: 700; color: #111827; }
+  .story-text strong { font-weight: 800; color: #111827; }
   .story-text span { animation: wordIn 260ms ease both; }
   .story-dot { width: 0.5rem; height: 0.5rem; border-radius: 999px; background: #d1d5db; transition: all 300ms ease; }
   .story-dot.is-active { width: 1.5rem; background: var(--accent-color, #1d4ed8); }

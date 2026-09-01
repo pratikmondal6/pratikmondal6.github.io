@@ -10,8 +10,8 @@ const projectData = [
     description: "LLM + Neo4j system analyzing research papers with automated entity extraction and visualization.",
     category: "Machine Learning",
     status: "Completed",
-    color: "#7EC8E3", // Pastel blue
-    bgColor: "from-blue-100/40 via-cyan-50/30 to-white/80",
+    color: "#2B7BB9", // Blue accent
+    bgColor: "from-white via-blue-50/20 to-gray-50/80",
     borderColor: "border-blue-100",
     shadowColor: "126, 200, 227",
     icon: "🤖",
@@ -24,13 +24,13 @@ const projectData = [
     description: "AI-powered IoT system with automated seeding, irrigation, and real-time soil monitoring.",
     category: "IoT & AI",
     status: "Live",
-    color: "#B7E4C7", // Pastel green
-    bgColor: "from-green-100/40 via-lime-50/30 to-white/80",
+    color: "#3F7F55", // Green accent
+    bgColor: "from-white via-green-50/20 to-gray-50/80",
     borderColor: "border-green-100",
     shadowColor: "183, 228, 199",
     icon: "🌱",
     impact: "Automated",
-    skills: ["Node.js", "ReactJS", "IoT"]
+    skills: ["Node.js", "React", "IoT"]
   },
   {
     ...siteConfig.projects[2],
@@ -38,8 +38,8 @@ const projectData = [
     description: "Enterprise emergency services mapping platform delivering improved user engagement.",
     category: "Enterprise",
     status: "Production",
-    color: "#F7D6E0", // Pastel pink
-    bgColor: "from-pink-100/40 via-fuchsia-50/30 to-white/80",
+    color: "#B84A6B", // Pink accent
+    bgColor: "from-white via-rose-50/20 to-gray-50/80",
     borderColor: "border-pink-100",
     shadowColor: "247, 214, 224",
     icon: "🚨",
@@ -52,8 +52,8 @@ const projectData = [
     description: "Smart farming compliance solution with field-specific guidance and regulatory automation.",
     category: "Analytics",
     status: "Active",
-    color: "#FFFACD", // Pastel yellow
-    bgColor: "from-yellow-100/40 via-amber-50/30 to-white/80",
+    color: "#B58900", // Gold accent
+    bgColor: "from-white via-amber-50/20 to-gray-50/80",
     borderColor: "border-yellow-100",
     shadowColor: "255, 250, 205",
     icon: "📊",
@@ -155,7 +155,7 @@ const statusColors: Record<string, string> = {
                         
                         {/* Status and link */}
                         <div class="flex items-center gap-2">
-                          <div class="flex items-center gap-1.5 px-2 py-1 bg-white/80 backdrop-blur-sm rounded-md text-xs font-medium border"
+                          <div class="flex items-center gap-1.5 px-2 py-1 bg-white rounded-md text-xs font-semibold border"
                                style={`color: ${statusColors[project.status]}; border-color: ${statusColors[project.status]}20`}>
                             <div class="w-1.5 h-1.5 rounded-full" style={`background-color: ${statusColors[project.status]}`}></div>
                             {project.status}
@@ -176,7 +176,7 @@ const statusColors: Record<string, string> = {
                         <h3 class="text-lg font-bold text-gray-900 leading-tight">
                           {project.name}
                         </h3>
-                        <p class="text-sm text-gray-700 leading-relaxed">
+                        <p class="text-sm text-gray-800 leading-relaxed">
                           {project.description}
                         </p>
 
@@ -185,8 +185,8 @@ const statusColors: Record<string, string> = {
                           <div class="pt-3 border-t border-gray-100/50">
                             <div class="flex flex-wrap gap-1.5">
                               {project.skills.slice(0, 3).map((skill) => (
-                                <span class="px-2 py-1 bg-white/90 backdrop-blur-sm text-gray-700 rounded-md text-xs font-medium border transition-all duration-300"
-                                      style={`border-color: ${project.color}20; color: ${project.color}`}>
+                                <span class="px-2 py-1 bg-gray-50 rounded-md text-xs font-semibold border transition-all duration-300"
+                                      style={`border-color: ${project.color}45; color: ${project.color}`}>
                                   {skill}
                                 </span>
                               ))}

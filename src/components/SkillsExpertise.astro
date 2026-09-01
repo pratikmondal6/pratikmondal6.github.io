@@ -22,7 +22,7 @@ const { skillsAndExpertise } = siteConfig;
                style="border-color: #3b82f630">
             <div class="flex items-center gap-2">
               <div class="w-2 h-2 rounded-full bg-blue-500"></div>
-              <span>Full-Stack</span>
+              <span>Backend Engineering</span>
             </div>
           </div>
           
@@ -138,44 +138,40 @@ const { skillsAndExpertise } = siteConfig;
           </div>
 
           {/* Tools & Methodologies */}
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
               <h4 class="text-lg font-bold mb-4 text-gray-900 flex items-center">
-                <span class="w-2 h-2 rounded-full mr-3" style={`background-color: ${siteConfig.accentColor}`}></span>
-                Tools & AI/ML
+                Development & Testing
               </h4>
-              <div class="space-y-4">
-                <div>
-                  <h5 class="text-sm font-semibold mb-2 text-gray-600">Development Tools</h5>
-                  <div class="flex flex-wrap gap-2">
-                    {skillsAndExpertise.tools.map((skill) => (
-                      <span class="bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-indigo-100 transition-colors duration-300 border border-indigo-200">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <h5 class="text-sm font-semibold mb-2 text-gray-600">AI & Machine Learning</h5>
-                  <div class="flex flex-wrap gap-2">
-                    {skillsAndExpertise.machineLearning.map((skill) => (
-                      <span class="bg-violet-50 text-violet-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-violet-100 transition-colors duration-300 border border-violet-200">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+              <div class="flex flex-wrap gap-2">
+                {skillsAndExpertise.tools.map((skill) => (
+                  <span class="bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-indigo-100 transition-colors duration-300 border border-indigo-200">
+                    {skill}
+                  </span>
+                ))}
               </div>
             </div>
 
             <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
               <h4 class="text-lg font-bold mb-4 text-gray-900 flex items-center">
-                <span class="w-2 h-2 rounded-full mr-3" style={`background-color: ${siteConfig.accentColor}`}></span>
-                Methodologies
+                AI & Data
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                {skillsAndExpertise.machineLearning.map((skill) => (
+                  <span class="bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-indigo-100 transition-colors duration-300 border border-indigo-200">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+              <h4 class="text-lg font-bold mb-4 text-gray-900 flex items-center">
+                Engineering Practices
               </h4>
               <div class="flex flex-wrap gap-2">
                 {skillsAndExpertise.methodologies.map((skill) => (
-                  <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-slate-200 transition-colors duration-300 border border-slate-200">
+                  <span class="bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-indigo-100 transition-colors duration-300 border border-indigo-200">
                     {skill}
                   </span>
                 ))}
